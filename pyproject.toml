@@ -4,4 +4,10 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "attrs>=25.3.0",
+    "biopython>=1.85",
+    "polars>=1.28.1",
+    "rich>=14.0.0",
+    "typer>=0.15.2",
+]
