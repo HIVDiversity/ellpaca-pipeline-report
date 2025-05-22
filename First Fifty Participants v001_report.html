@@ -1,0 +1,5836 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+
+
+</head>
+
+<body class="container">
+    <header>
+        <h1>Report for run First Fifty Participants v001</h1>
+        <p><strong>Date:</strong> 2025-05-06</p>
+    </header>
+
+    <section class="row">
+        <h2>Data Attrition</h2>
+        <p>This table shows the sequence count in each file before entering the pipeline (pre) and at the last stage that has un-collapsed sequences (post). You can sort the table by clicking on the columns</p>
+        <table class="table" id="attrition">
+            <thead>
+            <tr>
+                <th scope="col">File</th>
+                <th scope="col">Pre Sequence Count</th>
+                <th scope="col">Post Sequence Count</th>
+                <th scope="col">Percent Lost</th>
+                <th scope="col">Num Lost</th>
+            </tr>
+
+            </thead>
+            
+            <tr scope="row">
+                <td>CAP085_3160-pool4_earlham</td>
+                <td>3</td>
+                <td>2</td>
+                <td>20.0</td>
+                <td>1</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP267_4220-pool4_earlham</td>
+                <td>3</td>
+                <td>2</td>
+                <td>20.0</td>
+                <td>1</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP222_3160-pool8_inqaba+pool8_nicd</td>
+                <td>4</td>
+                <td>4</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP265_4240-pool4_earlham</td>
+                <td>4</td>
+                <td>4</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP222_3160-pool8_nicd+pool8_inqaba</td>
+                <td>4</td>
+                <td>4</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP266_4170-pool4_earlham</td>
+                <td>8</td>
+                <td>5</td>
+                <td>23.08</td>
+                <td>3</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP040_3110-pool4_earlham</td>
+                <td>5</td>
+                <td>5</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP217_1070-pool4_earlham</td>
+                <td>7</td>
+                <td>6</td>
+                <td>7.69</td>
+                <td>1</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP217_3140-pool4_earlham</td>
+                <td>13</td>
+                <td>8</td>
+                <td>23.81</td>
+                <td>5</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP257_4220-pool3_earlham</td>
+                <td>15</td>
+                <td>10</td>
+                <td>20.0</td>
+                <td>5</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_4200-pool4_earlham</td>
+                <td>16</td>
+                <td>11</td>
+                <td>18.52</td>
+                <td>5</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP222_4170-pool7_nicd</td>
+                <td>14</td>
+                <td>11</td>
+                <td>12.0</td>
+                <td>3</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP040_3160-pool4_earlham</td>
+                <td>19</td>
+                <td>11</td>
+                <td>26.67</td>
+                <td>8</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP221_3090-pool4_earlham</td>
+                <td>17</td>
+                <td>12</td>
+                <td>17.24</td>
+                <td>5</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP268_3090-pool4_earlham</td>
+                <td>14</td>
+                <td>12</td>
+                <td>7.69</td>
+                <td>2</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP217_4210-pool4_earlham</td>
+                <td>12</td>
+                <td>12</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP265_2000-pool6_nicd</td>
+                <td>13</td>
+                <td>13</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP283_4180-pool5_uw</td>
+                <td>24</td>
+                <td>15</td>
+                <td>23.08</td>
+                <td>9</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_4210-pool4_earlham</td>
+                <td>26</td>
+                <td>15</td>
+                <td>26.83</td>
+                <td>11</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP277_4180-pool4_earlham</td>
+                <td>31</td>
+                <td>16</td>
+                <td>31.91</td>
+                <td>15</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP237_4240-pool4_earlham</td>
+                <td>30</td>
+                <td>17</td>
+                <td>27.66</td>
+                <td>13</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP284_4220-pool4_earlham</td>
+                <td>23</td>
+                <td>19</td>
+                <td>9.52</td>
+                <td>4</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP211_3100-pool4_earlham</td>
+                <td>33</td>
+                <td>20</td>
+                <td>24.53</td>
+                <td>13</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP266_4190-pool7_nicd</td>
+                <td>22</td>
+                <td>21</td>
+                <td>2.33</td>
+                <td>1</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_6120-pool9_uw+pool9_inqaba</td>
+                <td>26</td>
+                <td>22</td>
+                <td>8.33</td>
+                <td>4</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_3120-pool5_uw</td>
+                <td>32</td>
+                <td>22</td>
+                <td>18.52</td>
+                <td>10</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_6120-pool9_inqaba+pool9_uw</td>
+                <td>26</td>
+                <td>22</td>
+                <td>8.33</td>
+                <td>4</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP265_4210-pool4_earlham</td>
+                <td>31</td>
+                <td>27</td>
+                <td>6.9</td>
+                <td>4</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP266_3140-pool4_earlham</td>
+                <td>41</td>
+                <td>27</td>
+                <td>20.59</td>
+                <td>14</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP265_3090-pool6_nicd</td>
+                <td>28</td>
+                <td>28</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP222_3090-pool8_nicd+pool8_inqaba</td>
+                <td>44</td>
+                <td>30</td>
+                <td>18.92</td>
+                <td>14</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP222_3090-pool8_inqaba+pool8_nicd</td>
+                <td>44</td>
+                <td>30</td>
+                <td>18.92</td>
+                <td>14</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP229_4200-pool7_nicd</td>
+                <td>31</td>
+                <td>30</td>
+                <td>1.64</td>
+                <td>1</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP268_4220-pool4_earlham</td>
+                <td>41</td>
+                <td>31</td>
+                <td>13.89</td>
+                <td>10</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_4180-pool5_uw+pool4_earlham</td>
+                <td>46</td>
+                <td>31</td>
+                <td>19.48</td>
+                <td>15</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_4180-pool4_earlham+pool5_uw</td>
+                <td>46</td>
+                <td>31</td>
+                <td>19.48</td>
+                <td>15</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP088_4250-pool1_nicd</td>
+                <td>52</td>
+                <td>31</td>
+                <td>25.3</td>
+                <td>21</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP225_4190-pool3_earlham+pool2_nicd</td>
+                <td>36</td>
+                <td>33</td>
+                <td>4.35</td>
+                <td>3</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP225_4190-pool2_nicd+pool3_earlham</td>
+                <td>36</td>
+                <td>33</td>
+                <td>4.35</td>
+                <td>3</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP275_3080-pool4_earlham</td>
+                <td>44</td>
+                <td>36</td>
+                <td>10.0</td>
+                <td>8</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP267_3090-pool4_earlham</td>
+                <td>53</td>
+                <td>40</td>
+                <td>13.98</td>
+                <td>13</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_3100-pool4_earlham</td>
+                <td>47</td>
+                <td>40</td>
+                <td>8.05</td>
+                <td>7</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP065_4180-pool4_earlham</td>
+                <td>58</td>
+                <td>41</td>
+                <td>17.17</td>
+                <td>17</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP295_4180-pool4_earlham</td>
+                <td>64</td>
+                <td>43</td>
+                <td>19.63</td>
+                <td>21</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP222_1110-pool4_earlham</td>
+                <td>44</td>
+                <td>44</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP282_2000-pool4_earlham</td>
+                <td>65</td>
+                <td>44</td>
+                <td>19.27</td>
+                <td>21</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP284_2000-pool4_earlham</td>
+                <td>62</td>
+                <td>45</td>
+                <td>15.89</td>
+                <td>17</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP276_3130-pool4_earlham</td>
+                <td>48</td>
+                <td>48</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP210_2050-pool11_inqaba</td>
+                <td>56</td>
+                <td>48</td>
+                <td>7.69</td>
+                <td>8</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP248_4230-pool4_earlham</td>
+                <td>64</td>
+                <td>49</td>
+                <td>13.27</td>
+                <td>15</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP061_4220-pool4_earlham</td>
+                <td>70</td>
+                <td>49</td>
+                <td>17.65</td>
+                <td>21</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP237_3100-pool4_earlham</td>
+                <td>57</td>
+                <td>50</td>
+                <td>6.54</td>
+                <td>7</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP222_4220-pool5_uw</td>
+                <td>82</td>
+                <td>50</td>
+                <td>24.24</td>
+                <td>32</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_4200-pool5_uw</td>
+                <td>67</td>
+                <td>52</td>
+                <td>12.61</td>
+                <td>15</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP283_3100-pool1_nicd</td>
+                <td>79</td>
+                <td>54</td>
+                <td>18.8</td>
+                <td>25</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_4250-pool3_earlham</td>
+                <td>75</td>
+                <td>55</td>
+                <td>15.38</td>
+                <td>20</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_3160-pool4_earlham</td>
+                <td>66</td>
+                <td>55</td>
+                <td>9.09</td>
+                <td>11</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP288_3150-pool3_earlham</td>
+                <td>66</td>
+                <td>55</td>
+                <td>9.09</td>
+                <td>11</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP295_4210-pool4_earlham</td>
+                <td>102</td>
+                <td>56</td>
+                <td>29.11</td>
+                <td>46</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_3110-pool3_earlham</td>
+                <td>71</td>
+                <td>59</td>
+                <td>9.23</td>
+                <td>12</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP237_4200-pool4_earlham</td>
+                <td>80</td>
+                <td>61</td>
+                <td>13.48</td>
+                <td>19</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP283_4190-pool4_earlham</td>
+                <td>92</td>
+                <td>62</td>
+                <td>19.48</td>
+                <td>30</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP266_4250-pool6_nicd</td>
+                <td>97</td>
+                <td>62</td>
+                <td>22.01</td>
+                <td>35</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP225_4260-pool4_earlham</td>
+                <td>79</td>
+                <td>63</td>
+                <td>11.27</td>
+                <td>16</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP294_2000-pool4_earlham</td>
+                <td>80</td>
+                <td>63</td>
+                <td>11.89</td>
+                <td>17</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_3090-pool3_earlham+pool2_nicd</td>
+                <td>88</td>
+                <td>63</td>
+                <td>16.56</td>
+                <td>25</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_3090-pool2_nicd+pool3_earlham</td>
+                <td>88</td>
+                <td>63</td>
+                <td>16.56</td>
+                <td>25</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP286_4210-pool2_nicd+pool3_earlham</td>
+                <td>85</td>
+                <td>63</td>
+                <td>14.86</td>
+                <td>22</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP088_3150-pool3_earlham</td>
+                <td>91</td>
+                <td>64</td>
+                <td>17.42</td>
+                <td>27</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP286_2000-pool4_earlham</td>
+                <td>82</td>
+                <td>65</td>
+                <td>11.56</td>
+                <td>17</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_2000-pool5_uw</td>
+                <td>83</td>
+                <td>69</td>
+                <td>9.21</td>
+                <td>14</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP283_3150-pool1_nicd</td>
+                <td>86</td>
+                <td>69</td>
+                <td>10.97</td>
+                <td>17</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_2000-pool2_nicd+pool3_earlham</td>
+                <td>102</td>
+                <td>71</td>
+                <td>17.92</td>
+                <td>31</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_2000-pool3_earlham+pool2_nicd</td>
+                <td>102</td>
+                <td>71</td>
+                <td>17.92</td>
+                <td>31</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_4260-pool3_earlham</td>
+                <td>104</td>
+                <td>74</td>
+                <td>16.85</td>
+                <td>30</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP217_4390-pool10_uw+pool10_inqaba</td>
+                <td>83</td>
+                <td>75</td>
+                <td>5.06</td>
+                <td>8</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_4250-pool4_earlham</td>
+                <td>101</td>
+                <td>75</td>
+                <td>14.77</td>
+                <td>26</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP257_3150-pool4_earlham</td>
+                <td>114</td>
+                <td>78</td>
+                <td>18.75</td>
+                <td>36</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_3160-pool2_nicd+pool3_earlham</td>
+                <td>113</td>
+                <td>79</td>
+                <td>17.71</td>
+                <td>34</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP279_3090-pool4_earlham</td>
+                <td>106</td>
+                <td>80</td>
+                <td>13.98</td>
+                <td>26</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP295_3090-pool3_earlham</td>
+                <td>120</td>
+                <td>85</td>
+                <td>17.07</td>
+                <td>35</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_4230-pool3_earlham</td>
+                <td>106</td>
+                <td>85</td>
+                <td>10.99</td>
+                <td>21</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_4200-pool3_earlham</td>
+                <td>131</td>
+                <td>86</td>
+                <td>20.74</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP267_4210-pool4_earlham</td>
+                <td>107</td>
+                <td>87</td>
+                <td>10.31</td>
+                <td>20</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP065_3120-pool4_earlham</td>
+                <td>112</td>
+                <td>90</td>
+                <td>10.89</td>
+                <td>22</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_3090-pool2_nicd+pool3_earlham</td>
+                <td>109</td>
+                <td>91</td>
+                <td>9.0</td>
+                <td>18</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP288_4220-pool3_earlham</td>
+                <td>126</td>
+                <td>91</td>
+                <td>16.13</td>
+                <td>35</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_4180-pool3_earlham</td>
+                <td>129</td>
+                <td>92</td>
+                <td>16.74</td>
+                <td>37</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_4250-pool4_earlham</td>
+                <td>114</td>
+                <td>92</td>
+                <td>10.68</td>
+                <td>22</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP295_4220-pool3_earlham</td>
+                <td>141</td>
+                <td>93</td>
+                <td>20.51</td>
+                <td>48</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP261_3150-pool2_nicd+pool3_earlham</td>
+                <td>111</td>
+                <td>94</td>
+                <td>8.29</td>
+                <td>17</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_3160-pool5_uw</td>
+                <td>115</td>
+                <td>94</td>
+                <td>10.05</td>
+                <td>21</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP257_4180-pool3_earlham</td>
+                <td>130</td>
+                <td>95</td>
+                <td>15.56</td>
+                <td>35</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP040_2010-pool4_earlham</td>
+                <td>154</td>
+                <td>95</td>
+                <td>23.69</td>
+                <td>59</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP264_4170-pool3_earlham</td>
+                <td>133</td>
+                <td>95</td>
+                <td>16.67</td>
+                <td>38</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_4170-pool3_earlham</td>
+                <td>132</td>
+                <td>98</td>
+                <td>14.78</td>
+                <td>34</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP237_3160-pool4_earlham</td>
+                <td>147</td>
+                <td>99</td>
+                <td>19.51</td>
+                <td>48</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_4280-pool2_nicd+pool3_earlham</td>
+                <td>142</td>
+                <td>100</td>
+                <td>17.36</td>
+                <td>42</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_2010-pool3_earlham+pool2_nicd</td>
+                <td>134</td>
+                <td>101</td>
+                <td>14.04</td>
+                <td>33</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_2010-pool2_nicd+pool3_earlham</td>
+                <td>134</td>
+                <td>101</td>
+                <td>14.04</td>
+                <td>33</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_2010-pool3_earlham+pool2_nicd</td>
+                <td>130</td>
+                <td>102</td>
+                <td>12.07</td>
+                <td>28</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_2010-pool2_nicd+pool3_earlham</td>
+                <td>130</td>
+                <td>102</td>
+                <td>12.07</td>
+                <td>28</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP248_4210-pool3_earlham</td>
+                <td>118</td>
+                <td>103</td>
+                <td>6.79</td>
+                <td>15</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP045_2000-pool4_earlham</td>
+                <td>118</td>
+                <td>103</td>
+                <td>6.79</td>
+                <td>15</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP222_4210-pool4_earlham</td>
+                <td>132</td>
+                <td>106</td>
+                <td>10.92</td>
+                <td>26</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP040_4200-pool4_earlham</td>
+                <td>143</td>
+                <td>106</td>
+                <td>14.86</td>
+                <td>37</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_4200-pool3_earlham+pool2_nicd</td>
+                <td>137</td>
+                <td>108</td>
+                <td>11.84</td>
+                <td>29</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP290_4200-pool2_nicd+pool3_earlham</td>
+                <td>133</td>
+                <td>108</td>
+                <td>10.37</td>
+                <td>25</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_4200-pool2_nicd+pool3_earlham</td>
+                <td>137</td>
+                <td>108</td>
+                <td>11.84</td>
+                <td>29</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP290_4200-pool3_earlham+pool2_nicd</td>
+                <td>133</td>
+                <td>108</td>
+                <td>10.37</td>
+                <td>25</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_3110-pool2_nicd+pool3_earlham</td>
+                <td>152</td>
+                <td>110</td>
+                <td>16.03</td>
+                <td>42</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_4230-pool3_earlham</td>
+                <td>146</td>
+                <td>110</td>
+                <td>14.06</td>
+                <td>36</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP257_4260-pool3_earlham</td>
+                <td>143</td>
+                <td>111</td>
+                <td>12.6</td>
+                <td>32</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_3100-pool3_earlham</td>
+                <td>155</td>
+                <td>111</td>
+                <td>16.54</td>
+                <td>44</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP085_3090-pool4_earlham</td>
+                <td>161</td>
+                <td>112</td>
+                <td>17.95</td>
+                <td>49</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP261_4220-pool3_earlham</td>
+                <td>136</td>
+                <td>114</td>
+                <td>8.8</td>
+                <td>22</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_2000-pool3_earlham+pool2_nicd</td>
+                <td>144</td>
+                <td>115</td>
+                <td>11.2</td>
+                <td>29</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_2000-pool2_nicd+pool3_earlham</td>
+                <td>144</td>
+                <td>115</td>
+                <td>11.2</td>
+                <td>29</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP286_4220-pool1_nicd</td>
+                <td>139</td>
+                <td>115</td>
+                <td>9.45</td>
+                <td>24</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_4260-pool3_earlham</td>
+                <td>151</td>
+                <td>115</td>
+                <td>13.53</td>
+                <td>36</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP286_2070-pool2_nicd+pool3_earlham</td>
+                <td>147</td>
+                <td>116</td>
+                <td>11.79</td>
+                <td>31</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP290_3150-pool2_nicd+pool3_earlham</td>
+                <td>153</td>
+                <td>117</td>
+                <td>13.33</td>
+                <td>36</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP257_3110-pool3_earlham</td>
+                <td>143</td>
+                <td>119</td>
+                <td>9.16</td>
+                <td>24</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP065_2000-pool2_nicd+pool3_earlham</td>
+                <td>153</td>
+                <td>120</td>
+                <td>12.09</td>
+                <td>33</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_4220-pool3_earlham+pool2_nicd</td>
+                <td>172</td>
+                <td>121</td>
+                <td>17.41</td>
+                <td>51</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_4220-pool2_nicd+pool3_earlham</td>
+                <td>172</td>
+                <td>121</td>
+                <td>17.41</td>
+                <td>51</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP085_4200-pool3_earlham</td>
+                <td>182</td>
+                <td>126</td>
+                <td>18.18</td>
+                <td>56</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_3160-pool2_nicd+pool3_earlham</td>
+                <td>165</td>
+                <td>127</td>
+                <td>13.01</td>
+                <td>38</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_3160-pool3_earlham+pool2_nicd</td>
+                <td>165</td>
+                <td>127</td>
+                <td>13.01</td>
+                <td>38</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP282_3080-pool4_earlham</td>
+                <td>188</td>
+                <td>128</td>
+                <td>18.99</td>
+                <td>60</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_4180-pool2_nicd+pool3_earlham</td>
+                <td>186</td>
+                <td>128</td>
+                <td>18.47</td>
+                <td>58</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_4180-pool3_earlham+pool2_nicd</td>
+                <td>186</td>
+                <td>128</td>
+                <td>18.47</td>
+                <td>58</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_4211-pool3_earlham</td>
+                <td>180</td>
+                <td>129</td>
+                <td>16.5</td>
+                <td>51</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP279_4190-pool5_uw</td>
+                <td>170</td>
+                <td>132</td>
+                <td>12.58</td>
+                <td>38</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_2010-pool3_earlham</td>
+                <td>166</td>
+                <td>132</td>
+                <td>11.41</td>
+                <td>34</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP248_4250-pool3_earlham</td>
+                <td>159</td>
+                <td>132</td>
+                <td>9.28</td>
+                <td>27</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_4270-pool2_nicd+pool3_earlham</td>
+                <td>178</td>
+                <td>133</td>
+                <td>14.47</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_4270-pool3_earlham+pool2_nicd</td>
+                <td>178</td>
+                <td>133</td>
+                <td>14.47</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP037_3090-pool3_earlham</td>
+                <td>199</td>
+                <td>134</td>
+                <td>19.52</td>
+                <td>65</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP257_4200-pool3_earlham</td>
+                <td>181</td>
+                <td>134</td>
+                <td>14.92</td>
+                <td>47</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP290_2000-pool2_nicd+pool3_earlham</td>
+                <td>151</td>
+                <td>135</td>
+                <td>5.59</td>
+                <td>16</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP288_4200-pool3_earlham</td>
+                <td>138</td>
+                <td>137</td>
+                <td>0.36</td>
+                <td>1</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_4220-pool3_earlham</td>
+                <td>189</td>
+                <td>137</td>
+                <td>15.95</td>
+                <td>52</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_3160-pool3_earlham</td>
+                <td>182</td>
+                <td>138</td>
+                <td>13.75</td>
+                <td>44</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP279_4210-pool3_earlham</td>
+                <td>181</td>
+                <td>141</td>
+                <td>12.42</td>
+                <td>40</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_3160-pool1_nicd</td>
+                <td>195</td>
+                <td>141</td>
+                <td>16.07</td>
+                <td>54</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_3110-pool5_uw</td>
+                <td>177</td>
+                <td>142</td>
+                <td>10.97</td>
+                <td>35</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_4230-pool3_earlham</td>
+                <td>179</td>
+                <td>142</td>
+                <td>11.53</td>
+                <td>37</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP276_2000-pool4_earlham</td>
+                <td>144</td>
+                <td>143</td>
+                <td>0.35</td>
+                <td>1</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_4210-pool3_earlham</td>
+                <td>192</td>
+                <td>143</td>
+                <td>14.63</td>
+                <td>49</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_3100-pool3_earlham</td>
+                <td>186</td>
+                <td>145</td>
+                <td>12.39</td>
+                <td>41</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP200_2000-pool2_nicd+pool3_earlham</td>
+                <td>197</td>
+                <td>145</td>
+                <td>15.2</td>
+                <td>52</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP286_3130-pool2_nicd+pool3_earlham</td>
+                <td>185</td>
+                <td>147</td>
+                <td>11.45</td>
+                <td>38</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP286_3130-pool3_earlham+pool2_nicd</td>
+                <td>185</td>
+                <td>147</td>
+                <td>11.45</td>
+                <td>38</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP085_4180-pool3_earlham+pool2_nicd</td>
+                <td>233</td>
+                <td>147</td>
+                <td>22.63</td>
+                <td>86</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP085_4180-pool2_nicd+pool3_earlham</td>
+                <td>233</td>
+                <td>147</td>
+                <td>22.63</td>
+                <td>86</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_2010-pool3_earlham+pool2_nicd</td>
+                <td>192</td>
+                <td>148</td>
+                <td>12.94</td>
+                <td>44</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_2010-pool2_nicd+pool3_earlham</td>
+                <td>192</td>
+                <td>148</td>
+                <td>12.94</td>
+                <td>44</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP271_4220-pool4_earlham</td>
+                <td>185</td>
+                <td>148</td>
+                <td>11.11</td>
+                <td>37</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP264_4240-pool2_nicd+pool3_earlham</td>
+                <td>193</td>
+                <td>148</td>
+                <td>13.2</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_3150-pool3_earlham+pool2_nicd</td>
+                <td>191</td>
+                <td>149</td>
+                <td>12.35</td>
+                <td>42</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP221_4220-pool1_nicd</td>
+                <td>184</td>
+                <td>149</td>
+                <td>10.51</td>
+                <td>35</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_3150-pool2_nicd+pool3_earlham</td>
+                <td>191</td>
+                <td>149</td>
+                <td>12.35</td>
+                <td>42</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP267_2000-pool4_earlham</td>
+                <td>197</td>
+                <td>151</td>
+                <td>13.22</td>
+                <td>46</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_2000-pool2_nicd+pool3_earlham</td>
+                <td>197</td>
+                <td>151</td>
+                <td>13.22</td>
+                <td>46</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_2000-pool3_earlham+pool2_nicd</td>
+                <td>197</td>
+                <td>151</td>
+                <td>13.22</td>
+                <td>46</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP265_4170-pool4_earlham</td>
+                <td>193</td>
+                <td>153</td>
+                <td>11.56</td>
+                <td>40</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_4220-pool3_earlham</td>
+                <td>224</td>
+                <td>154</td>
+                <td>18.52</td>
+                <td>70</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP264_4220-pool3_earlham</td>
+                <td>215</td>
+                <td>156</td>
+                <td>15.9</td>
+                <td>59</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP065_3150-pool1_nicd</td>
+                <td>184</td>
+                <td>157</td>
+                <td>7.92</td>
+                <td>27</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP225_2010-pool2_nicd+pool3_earlham</td>
+                <td>198</td>
+                <td>158</td>
+                <td>11.24</td>
+                <td>40</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP225_2010-pool3_earlham+pool2_nicd</td>
+                <td>198</td>
+                <td>158</td>
+                <td>11.24</td>
+                <td>40</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_4240-pool3_earlham</td>
+                <td>225</td>
+                <td>158</td>
+                <td>17.49</td>
+                <td>67</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_3110-pool3_earlham</td>
+                <td>208</td>
+                <td>159</td>
+                <td>13.35</td>
+                <td>49</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP088_4180-pool1_nicd</td>
+                <td>219</td>
+                <td>159</td>
+                <td>15.87</td>
+                <td>60</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP210_4190-pool1_nicd</td>
+                <td>204</td>
+                <td>159</td>
+                <td>12.4</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_3110-pool3_earlham+pool2_nicd</td>
+                <td>205</td>
+                <td>162</td>
+                <td>11.72</td>
+                <td>43</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_3110-pool2_nicd+pool3_earlham</td>
+                <td>205</td>
+                <td>162</td>
+                <td>11.72</td>
+                <td>43</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_2000-pool5_uw</td>
+                <td>204</td>
+                <td>162</td>
+                <td>11.48</td>
+                <td>42</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP286_4170-pool1_nicd</td>
+                <td>194</td>
+                <td>163</td>
+                <td>8.68</td>
+                <td>31</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_4180-pool3_earlham</td>
+                <td>189</td>
+                <td>165</td>
+                <td>6.78</td>
+                <td>24</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_3090-pool3_earlham+pool2_nicd</td>
+                <td>215</td>
+                <td>166</td>
+                <td>12.86</td>
+                <td>49</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_3090-pool2_nicd+pool3_earlham</td>
+                <td>215</td>
+                <td>166</td>
+                <td>12.86</td>
+                <td>49</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP288_3100-pool3_earlham</td>
+                <td>212</td>
+                <td>167</td>
+                <td>11.87</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_4240-pool2_nicd+pool3_earlham</td>
+                <td>226</td>
+                <td>168</td>
+                <td>14.72</td>
+                <td>58</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_2010-pool2_nicd+pool3_earlham</td>
+                <td>215</td>
+                <td>169</td>
+                <td>11.98</td>
+                <td>46</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP266_2070-pool2_nicd+pool3_earlham</td>
+                <td>171</td>
+                <td>169</td>
+                <td>0.59</td>
+                <td>2</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP261_4241-pool1_nicd</td>
+                <td>221</td>
+                <td>169</td>
+                <td>13.33</td>
+                <td>52</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP266_2070-pool3_earlham+pool2_nicd</td>
+                <td>171</td>
+                <td>169</td>
+                <td>0.59</td>
+                <td>2</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_2010-pool3_earlham+pool2_nicd</td>
+                <td>215</td>
+                <td>169</td>
+                <td>11.98</td>
+                <td>46</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_3110-pool3_earlham</td>
+                <td>227</td>
+                <td>170</td>
+                <td>14.36</td>
+                <td>57</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP061_2030-pool4_earlham</td>
+                <td>238</td>
+                <td>172</td>
+                <td>16.1</td>
+                <td>66</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP210_1000-pool3_earlham+pool2_nicd</td>
+                <td>205</td>
+                <td>172</td>
+                <td>8.75</td>
+                <td>33</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP210_1000-pool2_nicd+pool3_earlham</td>
+                <td>205</td>
+                <td>172</td>
+                <td>8.75</td>
+                <td>33</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_2000-pool3_earlham+pool2_nicd</td>
+                <td>213</td>
+                <td>173</td>
+                <td>10.36</td>
+                <td>40</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_2000-pool2_nicd+pool3_earlham</td>
+                <td>213</td>
+                <td>173</td>
+                <td>10.36</td>
+                <td>40</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP188_3160-pool3_earlham+pool2_nicd</td>
+                <td>249</td>
+                <td>174</td>
+                <td>17.73</td>
+                <td>75</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_3100-pool3_earlham+pool2_nicd</td>
+                <td>219</td>
+                <td>174</td>
+                <td>11.45</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_3100-pool2_nicd+pool3_earlham</td>
+                <td>219</td>
+                <td>174</td>
+                <td>11.45</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP188_3160-pool2_nicd+pool3_earlham</td>
+                <td>249</td>
+                <td>174</td>
+                <td>17.73</td>
+                <td>75</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP286_4190-pool1_nicd</td>
+                <td>213</td>
+                <td>175</td>
+                <td>9.79</td>
+                <td>38</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_4171-pool3_earlham+pool2_nicd</td>
+                <td>243</td>
+                <td>176</td>
+                <td>15.99</td>
+                <td>67</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_4171-pool2_nicd+pool3_earlham</td>
+                <td>243</td>
+                <td>176</td>
+                <td>15.99</td>
+                <td>67</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP288_3160-pool3_earlham+pool2_nicd</td>
+                <td>228</td>
+                <td>177</td>
+                <td>12.59</td>
+                <td>51</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP288_3160-pool2_nicd+pool3_earlham</td>
+                <td>228</td>
+                <td>177</td>
+                <td>12.59</td>
+                <td>51</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP008_4200-pool10_uw+pool10_inqaba</td>
+                <td>209</td>
+                <td>178</td>
+                <td>8.01</td>
+                <td>31</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_4230-pool2_nicd+pool3_earlham</td>
+                <td>242</td>
+                <td>178</td>
+                <td>15.24</td>
+                <td>64</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_3150-pool3_earlham+pool2_nicd</td>
+                <td>225</td>
+                <td>180</td>
+                <td>11.11</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_3150-pool2_nicd+pool3_earlham</td>
+                <td>225</td>
+                <td>180</td>
+                <td>11.11</td>
+                <td>45</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP229_2000-pool1_nicd</td>
+                <td>234</td>
+                <td>182</td>
+                <td>12.5</td>
+                <td>52</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP283_6060-pool9_inqaba+pool9_uw</td>
+                <td>214</td>
+                <td>183</td>
+                <td>7.81</td>
+                <td>31</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_3150-pool2_nicd+pool3_earlham</td>
+                <td>239</td>
+                <td>184</td>
+                <td>13.0</td>
+                <td>55</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP256_3150-pool3_earlham+pool2_nicd</td>
+                <td>239</td>
+                <td>184</td>
+                <td>13.0</td>
+                <td>55</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP264_3080-pool1_nicd</td>
+                <td>217</td>
+                <td>188</td>
+                <td>7.16</td>
+                <td>29</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP288_3090-pool2_nicd+pool3_earlham</td>
+                <td>244</td>
+                <td>189</td>
+                <td>12.7</td>
+                <td>55</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP288_3090-pool3_earlham+pool2_nicd</td>
+                <td>244</td>
+                <td>189</td>
+                <td>12.7</td>
+                <td>55</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP037_3160-pool1_nicd</td>
+                <td>233</td>
+                <td>192</td>
+                <td>9.65</td>
+                <td>41</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP248_4180-pool3_earlham</td>
+                <td>236</td>
+                <td>192</td>
+                <td>10.28</td>
+                <td>44</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP229_3150-pool3_earlham</td>
+                <td>248</td>
+                <td>192</td>
+                <td>12.73</td>
+                <td>56</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP200_3090-pool1_nicd</td>
+                <td>252</td>
+                <td>194</td>
+                <td>13.0</td>
+                <td>58</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_3150-pool3_earlham</td>
+                <td>246</td>
+                <td>195</td>
+                <td>11.56</td>
+                <td>51</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP295_2000-pool1_nicd</td>
+                <td>241</td>
+                <td>197</td>
+                <td>10.05</td>
+                <td>44</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP085_4220-pool3_earlham</td>
+                <td>263</td>
+                <td>198</td>
+                <td>14.1</td>
+                <td>65</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_4220-pool2_nicd+pool3_earlham</td>
+                <td>256</td>
+                <td>201</td>
+                <td>12.04</td>
+                <td>55</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP279_3140-pool3_earlham</td>
+                <td>267</td>
+                <td>201</td>
+                <td>14.1</td>
+                <td>66</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_4180-pool3_earlham</td>
+                <td>266</td>
+                <td>201</td>
+                <td>13.92</td>
+                <td>65</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_3080-pool2_nicd+pool3_earlham</td>
+                <td>259</td>
+                <td>201</td>
+                <td>12.61</td>
+                <td>58</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_4170-pool2_nicd+pool3_earlham</td>
+                <td>264</td>
+                <td>201</td>
+                <td>13.55</td>
+                <td>63</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP045_2060-pool11_inqaba</td>
+                <td>276</td>
+                <td>202</td>
+                <td>15.48</td>
+                <td>74</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP188_4190-pool1_nicd</td>
+                <td>285</td>
+                <td>207</td>
+                <td>15.85</td>
+                <td>78</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_1110-pool2_nicd+pool3_earlham</td>
+                <td>260</td>
+                <td>208</td>
+                <td>11.11</td>
+                <td>52</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP088_4200-pool1_nicd</td>
+                <td>319</td>
+                <td>210</td>
+                <td>20.6</td>
+                <td>109</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP069_2010-pool3_earlham+pool2_nicd</td>
+                <td>279</td>
+                <td>210</td>
+                <td>14.11</td>
+                <td>69</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP069_2010-pool2_nicd+pool3_earlham</td>
+                <td>279</td>
+                <td>210</td>
+                <td>14.11</td>
+                <td>69</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP266_4210-pool7_nicd</td>
+                <td>276</td>
+                <td>213</td>
+                <td>12.88</td>
+                <td>63</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_4240-pool2_nicd+pool3_earlham</td>
+                <td>276</td>
+                <td>214</td>
+                <td>12.65</td>
+                <td>62</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP237_4180-pool10_uw+pool10_inqaba</td>
+                <td>291</td>
+                <td>215</td>
+                <td>15.02</td>
+                <td>76</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP210_3100-pool1_nicd</td>
+                <td>281</td>
+                <td>216</td>
+                <td>13.08</td>
+                <td>65</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP288_4180-pool3_earlham</td>
+                <td>273</td>
+                <td>219</td>
+                <td>10.98</td>
+                <td>54</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP237_4230-pool6_nicd</td>
+                <td>272</td>
+                <td>220</td>
+                <td>10.57</td>
+                <td>52</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP275_2000-pool4_earlham</td>
+                <td>222</td>
+                <td>220</td>
+                <td>0.45</td>
+                <td>2</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_4200-pool3_earlham+pool2_nicd</td>
+                <td>305</td>
+                <td>223</td>
+                <td>15.53</td>
+                <td>82</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_4200-pool2_nicd+pool3_earlham</td>
+                <td>305</td>
+                <td>223</td>
+                <td>15.53</td>
+                <td>82</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_4260-pool3_earlham</td>
+                <td>286</td>
+                <td>225</td>
+                <td>11.94</td>
+                <td>61</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP264_2000-pool1_nicd</td>
+                <td>278</td>
+                <td>227</td>
+                <td>10.1</td>
+                <td>51</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP271_3090-pool3_earlham</td>
+                <td>290</td>
+                <td>230</td>
+                <td>11.54</td>
+                <td>60</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP225_3160-pool3_earlham</td>
+                <td>303</td>
+                <td>234</td>
+                <td>12.85</td>
+                <td>69</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP222_4360-pool12_inqaba+pool10_uw+pool10_inqaba</td>
+                <td>296</td>
+                <td>234</td>
+                <td>11.7</td>
+                <td>62</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_2000-pool2_nicd+pool3_earlham</td>
+                <td>306</td>
+                <td>235</td>
+                <td>13.12</td>
+                <td>71</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP255_2000-pool3_earlham+pool2_nicd</td>
+                <td>306</td>
+                <td>235</td>
+                <td>13.12</td>
+                <td>71</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_3090-pool2_nicd+pool3_earlham</td>
+                <td>298</td>
+                <td>238</td>
+                <td>11.19</td>
+                <td>60</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP268_2000-pool10_uw+pool10_inqaba</td>
+                <td>265</td>
+                <td>239</td>
+                <td>5.16</td>
+                <td>26</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP283_4220-pool5_uw</td>
+                <td>339</td>
+                <td>242</td>
+                <td>16.7</td>
+                <td>97</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_4200-pool3_earlham+pool4_earlham</td>
+                <td>317</td>
+                <td>244</td>
+                <td>13.01</td>
+                <td>73</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_4200-pool4_earlham+pool3_earlham</td>
+                <td>317</td>
+                <td>244</td>
+                <td>13.01</td>
+                <td>73</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_2000-pool5_uw</td>
+                <td>315</td>
+                <td>247</td>
+                <td>12.1</td>
+                <td>68</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP261_3080-pool1_nicd</td>
+                <td>314</td>
+                <td>248</td>
+                <td>11.74</td>
+                <td>66</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP069_3150-pool1_nicd</td>
+                <td>325</td>
+                <td>254</td>
+                <td>12.26</td>
+                <td>71</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP188_4230-pool1_nicd</td>
+                <td>315</td>
+                <td>255</td>
+                <td>10.53</td>
+                <td>60</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP177_4190-pool3_earlham</td>
+                <td>359</td>
+                <td>257</td>
+                <td>16.56</td>
+                <td>102</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP239_2050-pool12_inqaba</td>
+                <td>343</td>
+                <td>258</td>
+                <td>14.14</td>
+                <td>85</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP290_4210-pool3_earlham+pool2_nicd</td>
+                <td>346</td>
+                <td>259</td>
+                <td>14.38</td>
+                <td>87</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP290_4210-pool2_nicd+pool3_earlham</td>
+                <td>346</td>
+                <td>259</td>
+                <td>14.38</td>
+                <td>87</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP200_4220-pool2_nicd+pool3_earlham</td>
+                <td>328</td>
+                <td>259</td>
+                <td>11.75</td>
+                <td>69</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP069_3090-pool1_nicd</td>
+                <td>316</td>
+                <td>262</td>
+                <td>9.34</td>
+                <td>54</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_4190-pool2_nicd+pool3_earlham</td>
+                <td>338</td>
+                <td>264</td>
+                <td>12.29</td>
+                <td>74</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP257_2000-pool2_nicd+pool3_earlham</td>
+                <td>318</td>
+                <td>265</td>
+                <td>9.09</td>
+                <td>53</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP257_2000-pool3_earlham+pool2_nicd</td>
+                <td>318</td>
+                <td>265</td>
+                <td>9.09</td>
+                <td>53</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP037_4220-pool2_nicd+pool3_earlham</td>
+                <td>349</td>
+                <td>266</td>
+                <td>13.5</td>
+                <td>83</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP264_4200-pool3_earlham</td>
+                <td>344</td>
+                <td>271</td>
+                <td>11.87</td>
+                <td>73</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP264_3140-pool3_earlham</td>
+                <td>347</td>
+                <td>273</td>
+                <td>11.94</td>
+                <td>74</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP210_4180-pool1_nicd</td>
+                <td>332</td>
+                <td>274</td>
+                <td>9.57</td>
+                <td>58</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP061_3080-pool1_nicd+pool4_earlham</td>
+                <td>373</td>
+                <td>282</td>
+                <td>13.89</td>
+                <td>91</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP061_3080-pool4_earlham+pool1_nicd</td>
+                <td>373</td>
+                <td>282</td>
+                <td>13.89</td>
+                <td>91</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP279_4170-pool3_earlham+pool2_nicd</td>
+                <td>365</td>
+                <td>284</td>
+                <td>12.48</td>
+                <td>81</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP279_4170-pool2_nicd+pool3_earlham</td>
+                <td>365</td>
+                <td>284</td>
+                <td>12.48</td>
+                <td>81</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP261_4180-pool3_earlham</td>
+                <td>373</td>
+                <td>289</td>
+                <td>12.69</td>
+                <td>84</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP200_4180-pool1_nicd</td>
+                <td>344</td>
+                <td>289</td>
+                <td>8.69</td>
+                <td>55</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP188_4200-pool1_nicd</td>
+                <td>376</td>
+                <td>292</td>
+                <td>12.57</td>
+                <td>84</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP248_3160-pool2_nicd+pool3_earlham</td>
+                <td>352</td>
+                <td>294</td>
+                <td>8.98</td>
+                <td>58</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP225_3110-pool1_nicd</td>
+                <td>340</td>
+                <td>296</td>
+                <td>6.92</td>
+                <td>44</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_2000-pool3_earlham+pool2_nicd</td>
+                <td>386</td>
+                <td>313</td>
+                <td>10.44</td>
+                <td>73</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_2000-pool2_nicd+pool3_earlham</td>
+                <td>386</td>
+                <td>313</td>
+                <td>10.44</td>
+                <td>73</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP271_4180-pool1_nicd</td>
+                <td>365</td>
+                <td>313</td>
+                <td>7.67</td>
+                <td>52</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP248_2010-pool2_nicd+pool3_earlham</td>
+                <td>393</td>
+                <td>317</td>
+                <td>10.7</td>
+                <td>76</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_4220-pool2_nicd+pool3_earlham</td>
+                <td>426</td>
+                <td>318</td>
+                <td>14.52</td>
+                <td>108</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP188_4240-pool1_nicd</td>
+                <td>406</td>
+                <td>322</td>
+                <td>11.54</td>
+                <td>84</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP200_4200-pool1_nicd</td>
+                <td>422</td>
+                <td>323</td>
+                <td>13.29</td>
+                <td>99</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP221_3150-pool1_nicd</td>
+                <td>390</td>
+                <td>327</td>
+                <td>8.79</td>
+                <td>63</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP295_3150-pool1_nicd</td>
+                <td>424</td>
+                <td>328</td>
+                <td>12.77</td>
+                <td>96</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP225_4280-pool7_nicd</td>
+                <td>360</td>
+                <td>328</td>
+                <td>4.65</td>
+                <td>32</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP271_4200-pool5_uw</td>
+                <td>401</td>
+                <td>329</td>
+                <td>9.86</td>
+                <td>72</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP206_4230-pool2_nicd+pool3_earlham</td>
+                <td>438</td>
+                <td>338</td>
+                <td>12.89</td>
+                <td>100</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP261_2000-pool1_nicd</td>
+                <td>426</td>
+                <td>345</td>
+                <td>10.51</td>
+                <td>81</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP244_4400-pool10_uw+pool10_inqaba</td>
+                <td>471</td>
+                <td>348</td>
+                <td>15.02</td>
+                <td>123</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP210_3150-pool1_nicd</td>
+                <td>434</td>
+                <td>349</td>
+                <td>10.86</td>
+                <td>85</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP248_3110a-pool2_nicd+pool3_earlham</td>
+                <td>434</td>
+                <td>357</td>
+                <td>9.73</td>
+                <td>77</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP085_4240-pool1_nicd</td>
+                <td>482</td>
+                <td>358</td>
+                <td>14.76</td>
+                <td>124</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP085_2000-pool1_nicd</td>
+                <td>442</td>
+                <td>369</td>
+                <td>9.0</td>
+                <td>73</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP037_4200-pool3_earlham</td>
+                <td>498</td>
+                <td>373</td>
+                <td>14.35</td>
+                <td>125</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP088_4220-pool1_nicd</td>
+                <td>482</td>
+                <td>374</td>
+                <td>12.62</td>
+                <td>108</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP279_4220-pool1_nicd</td>
+                <td>471</td>
+                <td>378</td>
+                <td>10.95</td>
+                <td>93</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP200_4240-pool1_nicd</td>
+                <td>480</td>
+                <td>378</td>
+                <td>11.89</td>
+                <td>102</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP200_3150-pool1_nicd</td>
+                <td>468</td>
+                <td>387</td>
+                <td>9.47</td>
+                <td>81</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP268_4280-pool10_uw+pool10_inqaba</td>
+                <td>533</td>
+                <td>389</td>
+                <td>15.62</td>
+                <td>144</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP277_4310-pool10_uw+pool10_inqaba</td>
+                <td>565</td>
+                <td>408</td>
+                <td>16.14</td>
+                <td>157</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP280_3100-pool3_earlham</td>
+                <td>536</td>
+                <td>412</td>
+                <td>13.08</td>
+                <td>124</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_4240-pool12_inqaba</td>
+                <td>576</td>
+                <td>420</td>
+                <td>15.66</td>
+                <td>156</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP221_4240-pool1_nicd</td>
+                <td>509</td>
+                <td>432</td>
+                <td>8.18</td>
+                <td>77</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP188_2000-pool5_uw</td>
+                <td>549</td>
+                <td>439</td>
+                <td>11.13</td>
+                <td>110</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP266_2000-pool1_nicd</td>
+                <td>528</td>
+                <td>444</td>
+                <td>8.64</td>
+                <td>84</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP229_4240-pool5_uw</td>
+                <td>592</td>
+                <td>445</td>
+                <td>14.18</td>
+                <td>147</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP287_4180-pool8_inqaba+pool8_nicd</td>
+                <td>750</td>
+                <td>455</td>
+                <td>24.48</td>
+                <td>295</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP037_4240-pool1_nicd</td>
+                <td>570</td>
+                <td>459</td>
+                <td>10.79</td>
+                <td>111</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP290_3090-pool1_nicd</td>
+                <td>586</td>
+                <td>487</td>
+                <td>9.23</td>
+                <td>99</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP292_6000-pool9_inqaba+pool9_uw</td>
+                <td>605</td>
+                <td>508</td>
+                <td>8.72</td>
+                <td>97</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP037_4180-pool1_nicd</td>
+                <td>663</td>
+                <td>526</td>
+                <td>11.52</td>
+                <td>137</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP295_4240-pool8_inqaba+pool8_nicd</td>
+                <td>825</td>
+                <td>669</td>
+                <td>10.44</td>
+                <td>156</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP037_2000-pool5_uw</td>
+                <td>891</td>
+                <td>686</td>
+                <td>13.0</td>
+                <td>205</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP065_4240-pool12_inqaba+pool5_uw</td>
+                <td>807</td>
+                <td>693</td>
+                <td>7.6</td>
+                <td>114</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP265_3140-pool8_inqaba+pool8_nicd</td>
+                <td>730</td>
+                <td>730</td>
+                <td>0.0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP188_3110-pool10_uw+pool10_inqaba</td>
+                <td>977</td>
+                <td>828</td>
+                <td>8.25</td>
+                <td>149</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP279_2000-pool3_earlham+pool4_earlham</td>
+                <td>1073</td>
+                <td>863</td>
+                <td>10.85</td>
+                <td>210</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP279_2000-pool4_earlham+pool3_earlham</td>
+                <td>1073</td>
+                <td>863</td>
+                <td>10.85</td>
+                <td>210</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP221_6080-pool9_inqaba+pool9_uw</td>
+                <td>1087</td>
+                <td>906</td>
+                <td>9.08</td>
+                <td>181</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP221_6080-pool9_uw+pool9_inqaba</td>
+                <td>1087</td>
+                <td>906</td>
+                <td>9.08</td>
+                <td>181</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP221_2000-pool8_inqaba+pool8_nicd</td>
+                <td>1153</td>
+                <td>936</td>
+                <td>10.39</td>
+                <td>217</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP228_6000-pool9_uw+pool9_inqaba</td>
+                <td>1208</td>
+                <td>984</td>
+                <td>10.22</td>
+                <td>224</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP228_6000-pool9_inqaba+pool9_uw</td>
+                <td>1208</td>
+                <td>984</td>
+                <td>10.22</td>
+                <td>224</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP228_6070-pool9_inqaba+pool9_uw</td>
+                <td>1276</td>
+                <td>1056</td>
+                <td>9.43</td>
+                <td>220</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP228_6070-pool9_uw+pool9_inqaba</td>
+                <td>1276</td>
+                <td>1056</td>
+                <td>9.43</td>
+                <td>220</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP045_2020-pool12_inqaba</td>
+                <td>1238</td>
+                <td>1063</td>
+                <td>7.61</td>
+                <td>175</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP264_6090-pool9_uw+pool9_inqaba</td>
+                <td>1293</td>
+                <td>1117</td>
+                <td>7.3</td>
+                <td>176</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP264_6090-pool9_inqaba+pool9_uw</td>
+                <td>1293</td>
+                <td>1117</td>
+                <td>7.3</td>
+                <td>176</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP188_4300-pool10_uw+pool10_inqaba</td>
+                <td>1443</td>
+                <td>1141</td>
+                <td>11.69</td>
+                <td>302</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP210_3090-pool12_inqaba</td>
+                <td>1599</td>
+                <td>1212</td>
+                <td>13.77</td>
+                <td>387</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP261_6070-pool9_uw+pool9_inqaba</td>
+                <td>1933</td>
+                <td>1608</td>
+                <td>9.18</td>
+                <td>325</td>
+            </tr>
+            
+            <tr scope="row">
+                <td>CAP261_6070-pool9_inqaba+pool9_uw</td>
+                <td>1933</td>
+                <td>1608</td>
+                <td>9.18</td>
+                <td>325</td>
+            </tr>
+            
+
+        </table>
+
+    </section>
+    <section class="row">
+        <h2>Filter Summary</h2>
+        <p>This table summarises results from the filtering step of the pipeline. The counts represent the number
+        of sequences that match the description of the heading. Note that some sequences may match two descriptions and this is not indicated.
+        This table is a work in progress</p>
+        <table class="table" id="filter-summary">
+        <thead>
+        <tr>
+            <th>Sample</th>
+            <th>Total Num Sequences</th>
+            <th>that pass filter</th>
+            <th>with more than 3 stop codons</th>
+            <th>with earliest stop codon before 90</th>
+            <th>with frameshifts</th>
+
+        </tr>
+        </thead>
+
+            <tbody>
+            
+            <tr>
+                <td>CAP264_2000-pool1_nicd</td>
+                <td>278</td>
+                <td>227</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_4230-pool2_nicd+pool3_earlham</td>
+                <td>242</td>
+                <td>178</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_4230-pool3_earlham</td>
+                <td>106</td>
+                <td>85</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP210_3150-pool1_nicd</td>
+                <td>434</td>
+                <td>349</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP069_3090-pool1_nicd</td>
+                <td>316</td>
+                <td>262</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP045_2000-pool4_earlham</td>
+                <td>118</td>
+                <td>103</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_2010-pool3_earlham+pool2_nicd</td>
+                <td>130</td>
+                <td>102</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP225_4260-pool4_earlham</td>
+                <td>79</td>
+                <td>63</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP221_6080-pool9_uw+pool9_inqaba</td>
+                <td>1087</td>
+                <td>906</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP275_3080-pool4_earlham</td>
+                <td>44</td>
+                <td>36</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP248_3110a-pool2_nicd+pool3_earlham</td>
+                <td>434</td>
+                <td>357</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_3160-pool4_earlham</td>
+                <td>66</td>
+                <td>55</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_3160-pool2_nicd+pool3_earlham</td>
+                <td>113</td>
+                <td>79</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP225_4190-pool2_nicd+pool3_earlham</td>
+                <td>36</td>
+                <td>33</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_3110-pool2_nicd+pool3_earlham</td>
+                <td>205</td>
+                <td>162</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP188_3110-pool10_uw+pool10_inqaba</td>
+                <td>977</td>
+                <td>828</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_4180-pool5_uw+pool4_earlham</td>
+                <td>46</td>
+                <td>31</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP040_3110-pool4_earlham</td>
+                <td>5</td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP222_3160-pool8_inqaba+pool8_nicd</td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_6000-pool9_inqaba+pool9_uw</td>
+                <td>605</td>
+                <td>508</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_4170-pool2_nicd+pool3_earlham</td>
+                <td>264</td>
+                <td>201</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_2000-pool3_earlham+pool2_nicd</td>
+                <td>213</td>
+                <td>173</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP065_4180-pool4_earlham</td>
+                <td>58</td>
+                <td>41</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_4190-pool3_earlham</td>
+                <td>359</td>
+                <td>257</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP222_4210-pool4_earlham</td>
+                <td>132</td>
+                <td>106</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_3110-pool3_earlham</td>
+                <td>227</td>
+                <td>170</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP282_2000-pool4_earlham</td>
+                <td>65</td>
+                <td>44</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP037_4220-pool2_nicd+pool3_earlham</td>
+                <td>349</td>
+                <td>266</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_3150-pool2_nicd+pool3_earlham</td>
+                <td>225</td>
+                <td>180</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP279_4170-pool3_earlham+pool2_nicd</td>
+                <td>365</td>
+                <td>284</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_4220-pool2_nicd+pool3_earlham</td>
+                <td>172</td>
+                <td>121</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP225_3160-pool3_earlham</td>
+                <td>303</td>
+                <td>234</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP268_4280-pool10_uw+pool10_inqaba</td>
+                <td>533</td>
+                <td>389</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP217_1070-pool4_earlham</td>
+                <td>7</td>
+                <td>6</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP288_3150-pool3_earlham</td>
+                <td>66</td>
+                <td>55</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_3160-pool2_nicd+pool3_earlham</td>
+                <td>165</td>
+                <td>127</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP211_3100-pool4_earlham</td>
+                <td>33</td>
+                <td>20</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP266_4170-pool4_earlham</td>
+                <td>8</td>
+                <td>5</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP088_4200-pool1_nicd</td>
+                <td>319</td>
+                <td>210</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_2010-pool2_nicd+pool3_earlham</td>
+                <td>215</td>
+                <td>169</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_4171-pool2_nicd+pool3_earlham</td>
+                <td>243</td>
+                <td>176</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP200_3150-pool1_nicd</td>
+                <td>468</td>
+                <td>387</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP271_4200-pool5_uw</td>
+                <td>401</td>
+                <td>329</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP264_4170-pool3_earlham</td>
+                <td>133</td>
+                <td>95</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_2000-pool2_nicd+pool3_earlham</td>
+                <td>306</td>
+                <td>235</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_3120-pool5_uw</td>
+                <td>32</td>
+                <td>22</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_2000-pool2_nicd+pool3_earlham</td>
+                <td>386</td>
+                <td>313</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP264_3080-pool1_nicd</td>
+                <td>217</td>
+                <td>188</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_4200-pool3_earlham+pool2_nicd</td>
+                <td>305</td>
+                <td>223</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP222_1110-pool4_earlham</td>
+                <td>44</td>
+                <td>44</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP088_3150-pool3_earlham</td>
+                <td>91</td>
+                <td>64</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP188_4300-pool10_uw+pool10_inqaba</td>
+                <td>1443</td>
+                <td>1141</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP267_4220-pool4_earlham</td>
+                <td>3</td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_4200-pool4_earlham+pool3_earlham</td>
+                <td>317</td>
+                <td>244</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP275_2000-pool4_earlham</td>
+                <td>222</td>
+                <td>220</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_4180-pool3_earlham</td>
+                <td>129</td>
+                <td>92</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP261_3150-pool2_nicd+pool3_earlham</td>
+                <td>111</td>
+                <td>94</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP221_4240-pool1_nicd</td>
+                <td>509</td>
+                <td>432</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP088_4220-pool1_nicd</td>
+                <td>482</td>
+                <td>374</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_2000-pool5_uw</td>
+                <td>315</td>
+                <td>247</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP237_3100-pool4_earlham</td>
+                <td>57</td>
+                <td>50</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP264_6090-pool9_inqaba+pool9_uw</td>
+                <td>1293</td>
+                <td>1117</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP085_4220-pool3_earlham</td>
+                <td>263</td>
+                <td>198</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP295_4240-pool8_inqaba+pool8_nicd</td>
+                <td>825</td>
+                <td>669</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP037_3160-pool1_nicd</td>
+                <td>233</td>
+                <td>192</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP229_4240-pool5_uw</td>
+                <td>592</td>
+                <td>445</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP279_3140-pool3_earlham</td>
+                <td>267</td>
+                <td>201</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_3100-pool3_earlham</td>
+                <td>186</td>
+                <td>145</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP261_2000-pool1_nicd</td>
+                <td>426</td>
+                <td>345</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP283_4190-pool4_earlham</td>
+                <td>92</td>
+                <td>62</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_4200-pool5_uw</td>
+                <td>67</td>
+                <td>52</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP268_4220-pool4_earlham</td>
+                <td>41</td>
+                <td>31</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP268_3090-pool4_earlham</td>
+                <td>14</td>
+                <td>12</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP283_3150-pool1_nicd</td>
+                <td>86</td>
+                <td>69</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_4260-pool3_earlham</td>
+                <td>151</td>
+                <td>115</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_4200-pool2_nicd+pool3_earlham</td>
+                <td>137</td>
+                <td>108</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_2000-pool2_nicd+pool3_earlham</td>
+                <td>144</td>
+                <td>115</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP200_2000-pool2_nicd+pool3_earlham</td>
+                <td>197</td>
+                <td>145</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP257_4260-pool3_earlham</td>
+                <td>143</td>
+                <td>111</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP188_4200-pool1_nicd</td>
+                <td>376</td>
+                <td>292</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP237_4240-pool4_earlham</td>
+                <td>30</td>
+                <td>17</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP061_4220-pool4_earlham</td>
+                <td>70</td>
+                <td>49</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_3100-pool3_earlham+pool2_nicd</td>
+                <td>219</td>
+                <td>174</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP040_4200-pool4_earlham</td>
+                <td>143</td>
+                <td>106</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP225_3110-pool1_nicd</td>
+                <td>340</td>
+                <td>296</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_4180-pool2_nicd+pool3_earlham</td>
+                <td>186</td>
+                <td>128</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_4200-pool3_earlham</td>
+                <td>131</td>
+                <td>86</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_4210-pool3_earlham</td>
+                <td>192</td>
+                <td>143</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP277_4310-pool10_uw+pool10_inqaba</td>
+                <td>565</td>
+                <td>408</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP237_4200-pool4_earlham</td>
+                <td>80</td>
+                <td>61</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP040_2010-pool4_earlham</td>
+                <td>154</td>
+                <td>95</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP188_4230-pool1_nicd</td>
+                <td>315</td>
+                <td>255</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP248_4250-pool3_earlham</td>
+                <td>159</td>
+                <td>132</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP264_3140-pool3_earlham</td>
+                <td>347</td>
+                <td>273</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_4280-pool2_nicd+pool3_earlham</td>
+                <td>142</td>
+                <td>100</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP284_4220-pool4_earlham</td>
+                <td>23</td>
+                <td>19</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP257_4200-pool3_earlham</td>
+                <td>181</td>
+                <td>134</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP237_3160-pool4_earlham</td>
+                <td>147</td>
+                <td>99</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_3110-pool3_earlham+pool2_nicd</td>
+                <td>205</td>
+                <td>162</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_3110-pool5_uw</td>
+                <td>177</td>
+                <td>142</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP217_4210-pool4_earlham</td>
+                <td>12</td>
+                <td>12</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_3080-pool2_nicd+pool3_earlham</td>
+                <td>259</td>
+                <td>201</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP210_3100-pool1_nicd</td>
+                <td>281</td>
+                <td>216</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP222_3090-pool8_inqaba+pool8_nicd</td>
+                <td>44</td>
+                <td>30</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_4260-pool3_earlham</td>
+                <td>104</td>
+                <td>74</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_3150-pool3_earlham+pool2_nicd</td>
+                <td>191</td>
+                <td>149</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP264_4240-pool2_nicd+pool3_earlham</td>
+                <td>193</td>
+                <td>148</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP210_1000-pool2_nicd+pool3_earlham</td>
+                <td>205</td>
+                <td>172</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_4220-pool2_nicd+pool3_earlham</td>
+                <td>426</td>
+                <td>318</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP279_4190-pool5_uw</td>
+                <td>170</td>
+                <td>132</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP222_4220-pool5_uw</td>
+                <td>82</td>
+                <td>50</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_2000-pool3_earlham+pool2_nicd</td>
+                <td>386</td>
+                <td>313</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP283_3100-pool1_nicd</td>
+                <td>79</td>
+                <td>54</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP248_4180-pool3_earlham</td>
+                <td>236</td>
+                <td>192</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP225_2010-pool2_nicd+pool3_earlham</td>
+                <td>198</td>
+                <td>158</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP266_4190-pool7_nicd</td>
+                <td>22</td>
+                <td>21</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP229_3150-pool3_earlham</td>
+                <td>248</td>
+                <td>192</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP200_4180-pool1_nicd</td>
+                <td>344</td>
+                <td>289</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP257_3110-pool3_earlham</td>
+                <td>143</td>
+                <td>119</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_2000-pool5_uw</td>
+                <td>83</td>
+                <td>69</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_2010-pool3_earlham</td>
+                <td>166</td>
+                <td>132</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_3150-pool3_earlham+pool2_nicd</td>
+                <td>239</td>
+                <td>184</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_3150-pool2_nicd+pool3_earlham</td>
+                <td>191</td>
+                <td>149</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP210_1000-pool3_earlham+pool2_nicd</td>
+                <td>205</td>
+                <td>172</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP265_3090-pool6_nicd</td>
+                <td>28</td>
+                <td>28</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_3090-pool2_nicd+pool3_earlham</td>
+                <td>298</td>
+                <td>238</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP288_4220-pool3_earlham</td>
+                <td>126</td>
+                <td>91</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP222_4170-pool7_nicd</td>
+                <td>14</td>
+                <td>11</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP085_3090-pool4_earlham</td>
+                <td>161</td>
+                <td>112</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP295_4210-pool4_earlham</td>
+                <td>102</td>
+                <td>56</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP248_4210-pool3_earlham</td>
+                <td>118</td>
+                <td>103</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_3110-pool2_nicd+pool3_earlham</td>
+                <td>152</td>
+                <td>110</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_3110-pool3_earlham</td>
+                <td>71</td>
+                <td>59</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_4180-pool3_earlham</td>
+                <td>266</td>
+                <td>201</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP061_2030-pool4_earlham</td>
+                <td>238</td>
+                <td>172</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_3100-pool3_earlham</td>
+                <td>155</td>
+                <td>111</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_4210-pool4_earlham</td>
+                <td>26</td>
+                <td>15</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP257_4180-pool3_earlham</td>
+                <td>130</td>
+                <td>95</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP188_3160-pool2_nicd+pool3_earlham</td>
+                <td>249</td>
+                <td>174</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP225_2010-pool3_earlham+pool2_nicd</td>
+                <td>198</td>
+                <td>158</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP261_4241-pool1_nicd</td>
+                <td>221</td>
+                <td>169</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP257_2000-pool2_nicd+pool3_earlham</td>
+                <td>318</td>
+                <td>265</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP217_3140-pool4_earlham</td>
+                <td>13</td>
+                <td>8</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP290_2000-pool2_nicd+pool3_earlham</td>
+                <td>151</td>
+                <td>135</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP264_4220-pool3_earlham</td>
+                <td>215</td>
+                <td>156</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_3110-pool3_earlham</td>
+                <td>208</td>
+                <td>159</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP221_2000-pool8_inqaba+pool8_nicd</td>
+                <td>1153</td>
+                <td>936</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_3160-pool5_uw</td>
+                <td>115</td>
+                <td>94</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP265_2000-pool6_nicd</td>
+                <td>13</td>
+                <td>13</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP088_4180-pool1_nicd</td>
+                <td>219</td>
+                <td>159</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP257_2000-pool3_earlham+pool2_nicd</td>
+                <td>318</td>
+                <td>265</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP279_4170-pool2_nicd+pool3_earlham</td>
+                <td>365</td>
+                <td>284</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP237_4230-pool6_nicd</td>
+                <td>272</td>
+                <td>220</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP065_4240-pool12_inqaba+pool5_uw</td>
+                <td>807</td>
+                <td>693</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_6120-pool9_uw+pool9_inqaba</td>
+                <td>26</td>
+                <td>22</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP271_4180-pool1_nicd</td>
+                <td>365</td>
+                <td>313</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP248_4230-pool4_earlham</td>
+                <td>64</td>
+                <td>49</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP284_2000-pool4_earlham</td>
+                <td>62</td>
+                <td>45</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_4230-pool3_earlham</td>
+                <td>146</td>
+                <td>110</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_2000-pool3_earlham+pool2_nicd</td>
+                <td>102</td>
+                <td>71</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_3100-pool2_nicd+pool3_earlham</td>
+                <td>219</td>
+                <td>174</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP261_4180-pool3_earlham</td>
+                <td>373</td>
+                <td>289</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP288_3090-pool2_nicd+pool3_earlham</td>
+                <td>244</td>
+                <td>189</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_2010-pool2_nicd+pool3_earlham</td>
+                <td>130</td>
+                <td>102</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_4240-pool3_earlham</td>
+                <td>225</td>
+                <td>158</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP295_4220-pool3_earlham</td>
+                <td>141</td>
+                <td>93</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP248_3160-pool2_nicd+pool3_earlham</td>
+                <td>352</td>
+                <td>294</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_3090-pool2_nicd+pool3_earlham</td>
+                <td>88</td>
+                <td>63</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_1110-pool2_nicd+pool3_earlham</td>
+                <td>260</td>
+                <td>208</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP286_3130-pool2_nicd+pool3_earlham</td>
+                <td>185</td>
+                <td>147</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_3150-pool3_earlham+pool2_nicd</td>
+                <td>225</td>
+                <td>180</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_3150-pool3_earlham</td>
+                <td>246</td>
+                <td>195</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_2000-pool2_nicd+pool3_earlham</td>
+                <td>213</td>
+                <td>173</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP261_3080-pool1_nicd</td>
+                <td>314</td>
+                <td>248</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_2010-pool2_nicd+pool3_earlham</td>
+                <td>134</td>
+                <td>101</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP267_3090-pool4_earlham</td>
+                <td>53</td>
+                <td>40</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP279_4220-pool1_nicd</td>
+                <td>471</td>
+                <td>378</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_4170-pool3_earlham</td>
+                <td>132</td>
+                <td>98</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP290_4200-pool3_earlham+pool2_nicd</td>
+                <td>133</td>
+                <td>108</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP221_4220-pool1_nicd</td>
+                <td>184</td>
+                <td>149</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_4220-pool3_earlham+pool2_nicd</td>
+                <td>172</td>
+                <td>121</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP069_2010-pool2_nicd+pool3_earlham</td>
+                <td>279</td>
+                <td>210</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP276_3130-pool4_earlham</td>
+                <td>48</td>
+                <td>48</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP286_2000-pool4_earlham</td>
+                <td>82</td>
+                <td>65</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP085_2000-pool1_nicd</td>
+                <td>442</td>
+                <td>369</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_4171-pool3_earlham+pool2_nicd</td>
+                <td>243</td>
+                <td>176</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP217_4390-pool10_uw+pool10_inqaba</td>
+                <td>83</td>
+                <td>75</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_2000-pool3_earlham+pool2_nicd</td>
+                <td>306</td>
+                <td>235</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP257_4220-pool3_earlham</td>
+                <td>15</td>
+                <td>10</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP265_4210-pool4_earlham</td>
+                <td>31</td>
+                <td>27</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP264_6090-pool9_uw+pool9_inqaba</td>
+                <td>1293</td>
+                <td>1117</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP286_2070-pool2_nicd+pool3_earlham</td>
+                <td>147</td>
+                <td>116</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP282_3080-pool4_earlham</td>
+                <td>188</td>
+                <td>128</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP200_3090-pool1_nicd</td>
+                <td>252</td>
+                <td>194</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_2010-pool3_earlham+pool2_nicd</td>
+                <td>134</td>
+                <td>101</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP228_6070-pool9_inqaba+pool9_uw</td>
+                <td>1276</td>
+                <td>1056</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP037_2000-pool5_uw</td>
+                <td>891</td>
+                <td>686</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP061_3080-pool4_earlham+pool1_nicd</td>
+                <td>373</td>
+                <td>282</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP288_4180-pool3_earlham</td>
+                <td>273</td>
+                <td>219</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP188_4190-pool1_nicd</td>
+                <td>285</td>
+                <td>207</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP295_3150-pool1_nicd</td>
+                <td>424</td>
+                <td>328</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP065_2000-pool2_nicd+pool3_earlham</td>
+                <td>153</td>
+                <td>120</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_2010-pool3_earlham+pool2_nicd</td>
+                <td>215</td>
+                <td>169</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP210_4180-pool1_nicd</td>
+                <td>332</td>
+                <td>274</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_4270-pool2_nicd+pool3_earlham</td>
+                <td>178</td>
+                <td>133</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP222_3160-pool8_nicd+pool8_inqaba</td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_4250-pool3_earlham</td>
+                <td>75</td>
+                <td>55</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_4200-pool3_earlham+pool4_earlham</td>
+                <td>317</td>
+                <td>244</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_4220-pool3_earlham</td>
+                <td>224</td>
+                <td>154</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_4240-pool2_nicd+pool3_earlham</td>
+                <td>276</td>
+                <td>214</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP237_4180-pool10_uw+pool10_inqaba</td>
+                <td>291</td>
+                <td>215</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP279_4210-pool3_earlham</td>
+                <td>181</td>
+                <td>141</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP286_3130-pool3_earlham+pool2_nicd</td>
+                <td>185</td>
+                <td>147</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP295_4180-pool4_earlham</td>
+                <td>64</td>
+                <td>43</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP257_3150-pool4_earlham</td>
+                <td>114</td>
+                <td>78</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_4250-pool4_earlham</td>
+                <td>114</td>
+                <td>92</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP283_4220-pool5_uw</td>
+                <td>339</td>
+                <td>242</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP200_4220-pool2_nicd+pool3_earlham</td>
+                <td>328</td>
+                <td>259</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_4220-pool2_nicd+pool3_earlham</td>
+                <td>256</td>
+                <td>201</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP279_3090-pool4_earlham</td>
+                <td>106</td>
+                <td>80</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_4250-pool4_earlham</td>
+                <td>101</td>
+                <td>75</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP177_4260-pool3_earlham</td>
+                <td>286</td>
+                <td>225</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_4180-pool3_earlham+pool2_nicd</td>
+                <td>186</td>
+                <td>128</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP085_4180-pool3_earlham+pool2_nicd</td>
+                <td>233</td>
+                <td>147</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP221_3090-pool4_earlham</td>
+                <td>17</td>
+                <td>12</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_4240-pool2_nicd+pool3_earlham</td>
+                <td>226</td>
+                <td>168</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_2000-pool3_earlham+pool2_nicd</td>
+                <td>144</td>
+                <td>115</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP264_4200-pool3_earlham</td>
+                <td>344</td>
+                <td>271</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_4180-pool3_earlham</td>
+                <td>189</td>
+                <td>165</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP267_2000-pool4_earlham</td>
+                <td>197</td>
+                <td>151</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP069_3150-pool1_nicd</td>
+                <td>325</td>
+                <td>254</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP290_4210-pool3_earlham+pool2_nicd</td>
+                <td>346</td>
+                <td>259</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP276_2000-pool4_earlham</td>
+                <td>144</td>
+                <td>143</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP200_4240-pool1_nicd</td>
+                <td>480</td>
+                <td>378</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_3090-pool3_earlham+pool2_nicd</td>
+                <td>215</td>
+                <td>166</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP037_4200-pool3_earlham</td>
+                <td>498</td>
+                <td>373</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP268_2000-pool10_uw+pool10_inqaba</td>
+                <td>265</td>
+                <td>239</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP221_3150-pool1_nicd</td>
+                <td>390</td>
+                <td>327</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP248_2010-pool2_nicd+pool3_earlham</td>
+                <td>393</td>
+                <td>317</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP288_3100-pool3_earlham</td>
+                <td>212</td>
+                <td>167</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP188_2000-pool5_uw</td>
+                <td>549</td>
+                <td>439</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP286_4210-pool2_nicd+pool3_earlham</td>
+                <td>85</td>
+                <td>63</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_3090-pool3_earlham+pool2_nicd</td>
+                <td>88</td>
+                <td>63</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP290_3150-pool2_nicd+pool3_earlham</td>
+                <td>153</td>
+                <td>117</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP210_3090-pool12_inqaba</td>
+                <td>1599</td>
+                <td>1212</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP295_2000-pool1_nicd</td>
+                <td>241</td>
+                <td>197</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP085_3160-pool4_earlham</td>
+                <td>3</td>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_4211-pool3_earlham</td>
+                <td>180</td>
+                <td>129</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_3100-pool3_earlham</td>
+                <td>536</td>
+                <td>412</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP261_4220-pool3_earlham</td>
+                <td>136</td>
+                <td>114</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP286_4190-pool1_nicd</td>
+                <td>213</td>
+                <td>175</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP271_4220-pool4_earlham</td>
+                <td>185</td>
+                <td>148</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP261_6070-pool9_uw+pool9_inqaba</td>
+                <td>1933</td>
+                <td>1608</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_4230-pool3_earlham</td>
+                <td>179</td>
+                <td>142</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP255_3090-pool2_nicd+pool3_earlham</td>
+                <td>215</td>
+                <td>166</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_3150-pool2_nicd+pool3_earlham</td>
+                <td>239</td>
+                <td>184</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP286_4170-pool1_nicd</td>
+                <td>194</td>
+                <td>163</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP228_6000-pool9_uw+pool9_inqaba</td>
+                <td>1208</td>
+                <td>984</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP288_3160-pool3_earlham+pool2_nicd</td>
+                <td>228</td>
+                <td>177</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP221_6080-pool9_inqaba+pool9_uw</td>
+                <td>1087</td>
+                <td>906</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP045_2020-pool12_inqaba</td>
+                <td>1238</td>
+                <td>1063</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP222_4360-pool12_inqaba+pool10_uw+pool10_inqaba</td>
+                <td>296</td>
+                <td>234</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP037_4180-pool1_nicd</td>
+                <td>663</td>
+                <td>526</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP037_4240-pool1_nicd</td>
+                <td>570</td>
+                <td>459</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_4270-pool3_earlham+pool2_nicd</td>
+                <td>178</td>
+                <td>133</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP045_2060-pool11_inqaba</td>
+                <td>276</td>
+                <td>202</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_2010-pool2_nicd+pool3_earlham</td>
+                <td>192</td>
+                <td>148</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP266_3140-pool4_earlham</td>
+                <td>41</td>
+                <td>27</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP266_2070-pool3_earlham+pool2_nicd</td>
+                <td>171</td>
+                <td>169</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP244_4400-pool10_uw+pool10_inqaba</td>
+                <td>471</td>
+                <td>348</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP085_4240-pool1_nicd</td>
+                <td>482</td>
+                <td>358</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP283_6060-pool9_inqaba+pool9_uw</td>
+                <td>214</td>
+                <td>183</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP065_3120-pool4_earlham</td>
+                <td>112</td>
+                <td>90</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP290_4200-pool2_nicd+pool3_earlham</td>
+                <td>133</td>
+                <td>108</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP266_4210-pool7_nicd</td>
+                <td>276</td>
+                <td>213</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP200_4200-pool1_nicd</td>
+                <td>422</td>
+                <td>323</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP277_4180-pool4_earlham</td>
+                <td>31</td>
+                <td>16</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_4200-pool4_earlham</td>
+                <td>16</td>
+                <td>11</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP088_4250-pool1_nicd</td>
+                <td>52</td>
+                <td>31</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_2010-pool3_earlham+pool2_nicd</td>
+                <td>192</td>
+                <td>148</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP261_6070-pool9_inqaba+pool9_uw</td>
+                <td>1933</td>
+                <td>1608</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP229_4200-pool7_nicd</td>
+                <td>31</td>
+                <td>30</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP279_2000-pool4_earlham+pool3_earlham</td>
+                <td>1073</td>
+                <td>863</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_3160-pool3_earlham+pool2_nicd</td>
+                <td>165</td>
+                <td>127</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_4200-pool10_uw+pool10_inqaba</td>
+                <td>209</td>
+                <td>178</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_4200-pool3_earlham+pool2_nicd</td>
+                <td>137</td>
+                <td>108</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP290_3090-pool1_nicd</td>
+                <td>586</td>
+                <td>487</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP085_4200-pool3_earlham</td>
+                <td>182</td>
+                <td>126</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP288_3090-pool3_earlham+pool2_nicd</td>
+                <td>244</td>
+                <td>189</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_2000-pool2_nicd+pool3_earlham</td>
+                <td>197</td>
+                <td>151</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP225_4280-pool7_nicd</td>
+                <td>360</td>
+                <td>328</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_4230-pool2_nicd+pool3_earlham</td>
+                <td>438</td>
+                <td>338</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP290_4210-pool2_nicd+pool3_earlham</td>
+                <td>346</td>
+                <td>259</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP256_4180-pool4_earlham+pool5_uw</td>
+                <td>46</td>
+                <td>31</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP229_2000-pool1_nicd</td>
+                <td>234</td>
+                <td>182</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP265_3140-pool8_inqaba+pool8_nicd</td>
+                <td>730</td>
+                <td>730</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_4200-pool2_nicd+pool3_earlham</td>
+                <td>305</td>
+                <td>223</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP265_4170-pool4_earlham</td>
+                <td>193</td>
+                <td>153</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP225_4190-pool3_earlham+pool2_nicd</td>
+                <td>36</td>
+                <td>33</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP283_4180-pool5_uw</td>
+                <td>24</td>
+                <td>15</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP295_3090-pool3_earlham</td>
+                <td>120</td>
+                <td>85</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP271_3090-pool3_earlham</td>
+                <td>290</td>
+                <td>230</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP292_6120-pool9_inqaba+pool9_uw</td>
+                <td>26</td>
+                <td>22</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP037_3090-pool3_earlham</td>
+                <td>199</td>
+                <td>134</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP265_4240-pool4_earlham</td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP294_2000-pool4_earlham</td>
+                <td>80</td>
+                <td>63</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP228_6000-pool9_inqaba+pool9_uw</td>
+                <td>1208</td>
+                <td>984</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP008_3100-pool4_earlham</td>
+                <td>47</td>
+                <td>40</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP288_4200-pool3_earlham</td>
+                <td>138</td>
+                <td>137</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP266_4250-pool6_nicd</td>
+                <td>97</td>
+                <td>62</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_4240-pool12_inqaba</td>
+                <td>576</td>
+                <td>420</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_2000-pool5_uw</td>
+                <td>204</td>
+                <td>162</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP040_3160-pool4_earlham</td>
+                <td>19</td>
+                <td>11</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_2050-pool12_inqaba</td>
+                <td>343</td>
+                <td>258</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_4180-pool8_inqaba+pool8_nicd</td>
+                <td>750</td>
+                <td>455</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP188_4240-pool1_nicd</td>
+                <td>406</td>
+                <td>322</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_4220-pool3_earlham</td>
+                <td>189</td>
+                <td>137</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP286_4220-pool1_nicd</td>
+                <td>139</td>
+                <td>115</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP085_4180-pool2_nicd+pool3_earlham</td>
+                <td>233</td>
+                <td>147</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP287_3090-pool2_nicd+pool3_earlham</td>
+                <td>109</td>
+                <td>91</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP279_2000-pool3_earlham+pool4_earlham</td>
+                <td>1073</td>
+                <td>863</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP288_3160-pool2_nicd+pool3_earlham</td>
+                <td>228</td>
+                <td>177</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP061_3080-pool1_nicd+pool4_earlham</td>
+                <td>373</td>
+                <td>282</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP210_2050-pool11_inqaba</td>
+                <td>56</td>
+                <td>48</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP210_4190-pool1_nicd</td>
+                <td>204</td>
+                <td>159</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_3160-pool3_earlham</td>
+                <td>182</td>
+                <td>138</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP239_3160-pool1_nicd</td>
+                <td>195</td>
+                <td>141</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP188_3160-pool3_earlham+pool2_nicd</td>
+                <td>249</td>
+                <td>174</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP065_3150-pool1_nicd</td>
+                <td>184</td>
+                <td>157</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP267_4210-pool4_earlham</td>
+                <td>107</td>
+                <td>87</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP266_2000-pool1_nicd</td>
+                <td>528</td>
+                <td>444</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP266_2070-pool2_nicd+pool3_earlham</td>
+                <td>171</td>
+                <td>169</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP228_6070-pool9_uw+pool9_inqaba</td>
+                <td>1276</td>
+                <td>1056</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP069_2010-pool3_earlham+pool2_nicd</td>
+                <td>279</td>
+                <td>210</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP206_4190-pool2_nicd+pool3_earlham</td>
+                <td>338</td>
+                <td>264</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP280_2000-pool2_nicd+pool3_earlham</td>
+                <td>102</td>
+                <td>71</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            <tr>
+                <td>CAP222_3090-pool8_nicd+pool8_inqaba</td>
+                <td>44</td>
+                <td>30</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+<!--    <section class="row">-->
+<!--        <h2>Filter Reports</h2>-->
+<!--        <table class="table" id="report-table">-->
+<!--            <thead>-->
+<!--            <tr>-->
+<!--                <th>Sample</th>-->
+<!--                <th>Passed Filter</th>-->
+<!--                <th>Number of Stop Codons</th>-->
+<!--                <th>Earliest Stop Codon PCT</th>-->
+<!--                <th>Sequence Loss</th>-->
+<!--                <th>Divisible By Three</th>-->
+<!--                <th>Length</th>-->
+<!--            </tr>-->
+
+<!--            -->
+
+<!--            </thead>-->
+<!--        </table>-->
+<!--    </section>-->
+
+
+    <footer>
+        <p>Report generated automatically.</p>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+<script type="module">
+const attr_dataTable = new simpleDatatables.DataTable("#attrition", {
+	searchable: false,
+	paging: false
+})
+
+const filter_dataTable = new simpleDatatables.DataTable("#filter-summary", {
+	searchable: false,
+	paging: false
+})
+
+</script>
+</body>
