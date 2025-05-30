@@ -1,0 +1,12 @@
+--- 
+
+title: "Pipeline Dashboard"
+author: "nf-codon-align"
+format: dashboard
+--- 
+
+```{python}
+from pipeline_report.main import 
+```
+
+# Pipeline run

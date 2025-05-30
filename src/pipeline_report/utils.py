@@ -1,8 +1,10 @@
-from pathlib import Path
 import logging
+from pathlib import Path
+
+from attrs import asdict, define
+from Bio import SeqIO
 from rich.logging import RichHandler
 from typing_extensions import Optional
-from attrs import define, asdict
 
 
 @define
@@ -60,30 +62,68 @@ def get_file_info_from_name(
     )
 
 
-def read_fasta_to_dict(filepath: Path) -> dict[str, str]:
-    """Reads a FASTA-formatted file into a python dictionary
+def read_fasta_file(
+    file: Path,
+    sequencing_timepoint: str,
+    sequencing_file: Optional[SequencingFile] = None,
+    name: Optional[str] = None,
+    participant: Optional[str] = None,
+    visit: Optional[str] = None,
+    pool: Optional[str] = None,
+) -> list[Sequence]:
+    reader = SeqIO.parse(file, "fasta")
 
-    Args:
-        filepath (Path): The path to the fasta file
+    if not sequencing_file:
+        sequencing_file: SequencingFile = SequencingFile(
+            name=name,
+            pool=pool,
+            visit=visit,
+            participant=participant,
+            path=file,
+            pipeline_point=sequencing_timepoint,
+        )
 
-    Returns:
-        dict[str, str]: A dictionary where the sequence IDs are the keys, and the sequences are the values
-    """
+    seqs = []
+    for sequence in reader:
+        seq_stats = Sequence(
+            name=sequence.id,
+            length=len(sequence.seq),
+            pool=sequencing_file.pool,
+            visit=sequencing_file.visit,
+            participant=sequencing_file.participant,
+            path=sequencing_file.path,
+            pipeline_point=sequencing_file.pipeline_point,
+            filename=sequencing_file.name,
+        )
+        seqs.append(seq_stats)
 
-    fasta_string_lines = open(filepath, "r").readlines()
+    return seqs
 
-    sequences = {}
-    header = ""
-    for line in fasta_string_lines:
-        line = line.strip()
-        if line.startswith(">"):
-            header = line.strip().strip(">")
-            if header in sequences:
-                logging.warning(
-                    f"There is already a line with the header {header} and it will be overwritten"
-                )
-            sequences[header] = ""
-        else:
-            sequences[header] += line.strip()
 
-    return sequences
+# def read_fasta_to_dict(filepath: Path) -> dict[str, str]:
+#     """Reads a FASTA-formatted file into a python dictionary
+
+#     Args:
+#         filepath (Path): The path to the fasta file
+
+#     Returns:
+#         dict[str, str]: A dictionary where the sequence IDs are the keys, and the sequences are the values
+#     """
+
+#     fasta_string_lines = open(filepath, "r").readlines()
+
+#     sequences = {}
+#     header = ""
+#     for line in fasta_string_lines:
+#         line = line.strip()
+#         if line.startswith(">"):
+#             header = line.strip().strip(">")
+#             if header in sequences:
+#                 logging.warning(
+#                     f"There is already a line with the header {header} and it will be overwritten"
+#                 )
+#             sequences[header] = ""
+#         else:
+#             sequences[header] += line.strip()
+
+#     return sequences
