@@ -139,6 +139,8 @@ def do_report(input_files: Path, output_files: Path, report_files: Path, run_nam
     }
     #
     logging.info("Rendering the report")
+    pre_post_df.write_csv(Path(f"{run_name}_prepost.csv"))
+    report_df.write_csv(Path(f"{run_name}_allreports.csv"))
     render(data, Path(f"{run_name}_report.html"), Path("src/pipeline_report/templates"))
 
 
