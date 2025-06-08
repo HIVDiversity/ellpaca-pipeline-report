@@ -1,12 +1,131 @@
 --- 
-
-title: "Pipeline Dashboard"
+title: "ELLPACA nu Merged 001 - Report"
 author: "nf-codon-align"
-format: dashboard
+format: html
+jupyter: python3
+engine: jupyter
+execute:
+  enabled: true 
 --- 
 
 ```{python}
-from pipeline_report.main import 
+#| tags: [parameters]
+pre_dir = "/home/dlejeune/Documents/real_data/ellpaca_nu_merged"
+post_dir = "/home/dlejeune/results/ellpaca_nu_merged_001/reverse_translate"
+report_dir = "/home/dlejeune/results/ellpaca_nu_merged_001/functional_filter"
+git_commit_id = "abcdef"
+nextflow_params = {"a": "something"}
 ```
 
-# Pipeline run
+```{python}
+#| echo: false
+#| output: false
+import parse_data
+from pathlib import Path
+import polars as pl
+from loguru import logger
+import polars.selectors as cs
+import sys
+from IPython.display import Markdown, display, clear_output
+from tabulate import tabulate
+from great_tables import loc, style
+import plotly.express as px
+import plotly.io as pio
+import plotly.graph_objects as go
+from plotly.colors import n_colors
+import plotnine as pn
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import altair as alt
+
+pre = Path(pre_dir)
+
+post = Path(post_dir)
+report_df = parse_data.load_functional_filter_reports(Path(report_dir))
+report_df.write_csv("./temp/reports.csv")
+pre_post_df = parse_data.load_pre_post_files(pre, post)
+```
+
+## Overview
+
+
+
+```{python}
+#| echo: false
+#| output: false
+lost_expr = (((pl.col("pre") - pl.col("post")) / pl.col("pre")) * 100).round(2)
+kept_expr = ((pl.col("post") / pl.col("pre")) * 100).round(2)
+
+lost_df = (
+        pre_post_df.group_by(["pipeline_point", "filename"])
+        .len()
+        .pivot(on=["pipeline_point"], index="filename")
+        .fill_null(0)
+        .with_columns(pct_lost=lost_expr, num_lost=pl.col("pre") - pl.col("post"), pct_kept = kept_expr)
+    )
+
+seq_attrition_overall = pre_post_df.group_by("pipeline_point").len()
+total_files_processed = len(pre_post_df["filename"].unique())
+lost_seqs = seq_attrition_overall.filter(pl.col("pipeline_point") == "pre")[0, 1] - seq_attrition_overall.filter(pl.col("pipeline_point") == "post")[0, 1]
+lost_pct = round((lost_seqs/seq_attrition_overall.filter(pl.col("pipeline_point") == "pre")[0, 1]) * 100, 2)
+```
+
+This pipeline run contained **`{python} total_files_processed`** files. In total, we lost **`{python} lost_seqs`** sequences, or **`{python} lost_pct`**% of the input. 
+
+```{python}
+#| echo: false
+seq_attrition_overall.sort(by="pipeline_point", descending=True).style.cols_label(cases={"pipeline_point": "Pipeline Point", "len": "Number of sequences"})
+```
+
+
+
+### Sequence Loss Overview
+There is meant to be an upset plot here
+
+## MSA Quality Check
+An overview of the resulting nucleotide multiple sequence alignments are shown below. Gaps are shown in purple, while other nucleotides are shown in green, yellow, blue, light putple.
+
+```{python}
+#| echo: false
+#| cache: true
+fig, ax = parse_data.print_msa_grid(post)
+fig.set_size_inches(13, 25)
+fig.tight_layout()
+
+```
+
+## Sequence Length
+The plot below shows the sequence length distribution for the samples **that pass filter**. 
+
+```{python}
+#| echo: false
+#| cache: true
+#| eval: true
+
+fig = px.strip(report_df.sort(by="sample_id").filter(pl.col("passes_filter")==True), x="nt_length_ungapped", y="sample_id", color="sample_id", template="simple_white", hover_data="seq_name")
+fig.update_layout(width=900, height=1600)
+fig.show()
+
+```
+
+```{python}
+#| echo: false
+#| eval: true
+pn.options.figure_size = (9, 16)
+(
+    pn.ggplot(report_df.sort(by="sample_id").filter(pl.col("passes_filter")==True), pn.aes(x="nt_length_ungapped", y="sample_id", color="sample_id"))+
+    pn.geom_jitter()+
+    pn.labs(x="Sequence Nucleotide Length (without gaps)", y="Sample")+
+    pn.theme_classic()+
+    pn.theme(legend_position="none")
+)
+
+```
+
+## Sample File Sizes
+```{python}
+#| echo: false
+px.bar(lost_df.sort(by="filename"), x="filename", y=["pct_lost", "pct_kept"], template="simple_white", color_discrete_sequence=["rgb(231, 63, 116)", "rgb(0, 134, 139)"], labels={"filename": "Sample", "value":"Percent of total sequences", "variable":"Sequence Type"})
+
+```

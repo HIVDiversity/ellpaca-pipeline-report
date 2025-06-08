@@ -1,9 +1,13 @@
-import logging
+import enum
+import os
 from pathlib import Path
+from typing import Literal
 
+import matplotlib.pyplot as plt
+import numpy as np
 from attrs import asdict, define
 from Bio import SeqIO
-from rich.logging import RichHandler
+from loguru import logger
 from typing_extensions import Optional
 
 
@@ -38,10 +42,8 @@ class Sequence:
     filename: str
 
 
-FORMAT = "%(message)s"
-logging.basicConfig(
-    level="NOTSET", format=FORMAT, datefmt="[%X]", handlers=[RichHandler()]
-)
+class SampleIDSchema(enum.Enum):
+    ELLPACA = "ELLPACA"
 
 
 def get_file_info_from_name(
@@ -50,11 +52,11 @@ def get_file_info_from_name(
     file_name = file.stem
     participant_id = file_name.split("_")[0]
     visit_id = file_name[7:11]
-    pool_id = file_name.split("-")[1].split(".")[0]
+    # pool_id = file_name.split("-")[1].split(".").get(0)
 
     return SequencingFile(
         name=file_name.split(".")[0],
-        pool=pool_id,
+        pool="",
         visit=visit_id,
         participant=participant_id,
         path=file,
@@ -71,8 +73,6 @@ def read_fasta_file(
     visit: Optional[str] = None,
     pool: Optional[str] = None,
 ) -> list[Sequence]:
-    reader = SeqIO.parse(file, "fasta")
-
     if not sequencing_file:
         sequencing_file: SequencingFile = SequencingFile(
             name=name,
@@ -82,6 +82,21 @@ def read_fasta_file(
             path=file,
             pipeline_point=sequencing_timepoint,
         )
+
+    if os.stat(file).st_size == 0:
+        return [
+            Sequence(
+                name=None,
+                length=None,
+                pool=sequencing_file.pool,
+                visit=sequencing_file.visit,
+                participant=sequencing_file.participant,
+                path=sequencing_file.path,
+                pipeline_point=sequencing_file.pipeline_point,
+                filename=sequencing_file.name,
+            )
+        ]
+    reader = SeqIO.parse(file.open("r", encoding="utf-8"), "fasta")
 
     seqs = []
     for sequence in reader:
@@ -100,30 +115,22 @@ def read_fasta_file(
     return seqs
 
 
-# def read_fasta_to_dict(filepath: Path) -> dict[str, str]:
-#     """Reads a FASTA-formatted file into a python dictionary
+def msa_to_numpy(msa_file: Path):
+    """Reads a multiple sequence alignment into a numpy array"""
+    msa_array = []
+    seq_names = []
 
-#     Args:
-#         filepath (Path): The path to the fasta file
+    reader = SeqIO.parse(msa_file, "fasta")
 
-#     Returns:
-#         dict[str, str]: A dictionary where the sequence IDs are the keys, and the sequences are the values
-#     """
+    for record in reader:
+        new_seq = []
 
-#     fasta_string_lines = open(filepath, "r").readlines()
+        for char in record.seq:
+            new_seq.append(ord(char))
 
-#     sequences = {}
-#     header = ""
-#     for line in fasta_string_lines:
-#         line = line.strip()
-#         if line.startswith(">"):
-#             header = line.strip().strip(">")
-#             if header in sequences:
-#                 logging.warning(
-#                     f"There is already a line with the header {header} and it will be overwritten"
-#                 )
-#             sequences[header] = ""
-#         else:
-#             sequences[header] += line.strip()
+        msa_array.append(new_seq)
+        seq_names.append(record.id)
 
-#     return sequences
+    msa_np = np.asarray(msa_array)
+
+    return seq_names, msa_np

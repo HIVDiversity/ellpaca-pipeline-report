@@ -1,9 +1,16 @@
+import os
+import sys
 from pathlib import Path
+from typing import Optional
 
+import matplotlib.pyplot as plt
+import numpy as np
 import polars as pl
 import utils
 from attrs import asdict
 from loguru import logger
+
+logger.add(sys.stderr, level="WARNING")
 
 
 def load_pre_post_files(pre_dir: Path, post_dir: Path):
@@ -92,6 +99,26 @@ def load_functional_filter_reports(base_dir: Path):
 
     logger.info("Concatenating all the reports.")
     reports_all = pl.concat(reports)
+
+    # Convert the contents of the sample ID field into CAPID, Visit ID, and pool.
+    # This is ELLPACA-specific but could be parameterised.
+    logger.info("Adding sample metadata from sample name")
+    reports_all = (
+        reports_all.with_columns(
+            pl.col("sample_id")
+            .str.split_exact("-", n=1)
+            .struct.rename_fields(["id_visit", "pool"])
+            .alias("fields")
+        )
+        .unnest("fields")
+        .with_columns(
+            pl.col("id_visit")
+            .str.split_exact("_", n=1)
+            .struct.rename_fields(["cap_id", "visit_id"])
+        )
+        .unnest("id_visit")
+    )
+
     return reports_all
 
 
@@ -149,3 +176,37 @@ def generate_report_data(
     report_df.write_csv(report_output)
 
     logger.info("Done.")
+
+
+def print_msa_grid(
+    msa_dir: Path, width: Optional[int] = 4, height: Optional[int] = None
+):
+    files = []
+
+    for file in msa_dir.glob("*"):
+        if os.stat(file).st_size > 0:
+            files.append(file)
+
+    if not width:
+        cols = 4
+    else:
+        cols = width
+
+    rows = int(np.ceil(len(files) / cols))
+
+    fig, ax = plt.subplots(ncols=cols, nrows=rows)
+
+    counter = 0
+    for col in range(cols):
+        for row in range(rows):
+            if counter > len(files) - 1:
+                break
+            _, current_msa = utils.msa_to_numpy(files[counter])
+
+            ax[row][col].imshow(current_msa, interpolation="none", cmap="viridis")
+            ax[row][col].set_aspect("auto")
+            ax[row][col].set_axis_off()
+            ax[row][col].set_title(files[counter].stem[:6])
+            counter += 1
+
+    return fig, ax
