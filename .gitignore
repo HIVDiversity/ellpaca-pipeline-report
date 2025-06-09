@@ -11,3 +11,4 @@ wheels/
 
 temp
 temp.ipynb
+*.pdf
