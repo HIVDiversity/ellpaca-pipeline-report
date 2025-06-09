@@ -55,7 +55,7 @@ def get_file_info_from_name(
     # pool_id = file_name.split("-")[1].split(".").get(0)
 
     return SequencingFile(
-        name=file_name.split(".")[0],
+        name=file_name[0:6],
         pool="",
         visit=visit_id,
         participant=participant_id,

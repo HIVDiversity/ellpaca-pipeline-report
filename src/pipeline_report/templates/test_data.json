@@ -1,0 +1,19 @@
+{
+  "run_name": "ABC",
+
+  "msa_grid_path": "/temp/img/msa_qualityplot.svg",
+  "loss_upset_plot_path": "/temp/img/loss_upset.svg",
+  "seq_length_boxplot_path": "/temp/img/length_boxplot.svg",
+
+  "file_count_pre": 100,
+  "file_count_post": 10,
+  "seq_count_pre": 100,
+  "seq_count_post": 19,
+  "seq_count_lost": 10,
+  "pct_seqs_lost": 13.2,
+
+  "nf_param_dump": {
+    "a": "abc",
+    "b": "bce"
+  }
+}

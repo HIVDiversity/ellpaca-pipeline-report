@@ -16,6 +16,7 @@ dependencies = [
     "joypy>=0.2.6",
     "jupyter>=1.1.1",
     "loguru>=0.7.3",
+    "matplotlib>=3.10.3",
     "plotly>=6.1.2",
     "plotnine>=0.14.5",
     "polars>=1.28.1",
