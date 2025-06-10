@@ -115,7 +115,7 @@ def create_seq_length_boxplot(data: pl.DataFrame, output: Path) -> None:
         + pn.geom_boxplot()
         + pn.labs(y="Sequence Nucleotide Length (without gaps)", x="Sample")
         + pn.coord_flip()
-        # + pn.theme_minimal()
+        + pn.theme_classic()
         + pn.theme(legend_position="none")
     )
 
