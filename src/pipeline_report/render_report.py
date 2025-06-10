@@ -3,19 +3,19 @@ import shlex
 import subprocess
 import sys
 from datetime import datetime
+from importlib import resources
 from pathlib import Path
 from typing import Literal
 
 import create_plots as plotter
 import parse_data
 import polars as pl
+import templates
 from loguru import logger
 
 logger.add(
     sys.stderr, format="{time} {level} {message}", filter="prep_data", level="INFO"
 )
-
-TYPST_EXECUTABLE = Path("/home/dlejeune/.cargo/bin/typst")
 
 
 def create_report_json(
@@ -156,13 +156,10 @@ def render(
         nextflow_params_fp,
     )
 
-    template = Path(
-        "/home/dlejeune/masters/pipeline_report/src/pipeline_report/templates/template.typ"
-    )
-
+    template_file = resources.files(templates) / "template.typ"
     template_output_path = report_output_dir / f"{run_name}_report.typ"
-    logger.info(f"Copying template at {template} to {template_output_path}")
-    template_output_path.write_bytes(template.read_bytes())
+    logger.info(f"Copying template at {template_file} to {template_output_path}")
+    template_output_path.write_bytes(template_file.read_bytes())
     logger.info("Done")
 
     compile_command = f"typst compile {template_output_path}"
