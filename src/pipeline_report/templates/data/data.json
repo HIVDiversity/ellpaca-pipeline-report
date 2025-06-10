@@ -1,5 +1,6 @@
 {
   "run_name": "test_report_001",
+  "run_date": "2025-06-10",
   "file_count_pre": 109,
   "file_count_post": 109,
   "seq_count_pre": 133462,
@@ -7,10 +8,12 @@
   "seq_count_lost": 36712,
   "pct_seqs_lost": 27.51,
   "git_commit_hash": "abcdef",
-  "nf_param_dump": { "a": "something" },
-  "img_msa_grid_path": "data/msa_qualityplot.svg",
-  "img_upset_plot_path": "data/loss_upset.svg",
-  "img_length_boxplot_path": "data/length_boxplot.svg",
-  "img_seq_loss_barplot": "data/seq_loss_barplot.svg",
-  "img_seq_attrition_bubbleplot_path": "data/seq_loss_bubbleplot.svg"
+  "nf_param_dump": {
+    "a": "something"
+  },
+  "img_msa_gridplot": "data/test_report_001_msaGridPlot.png",
+  "img_upsetplot": "data/test_report_001_UpSetPlot.png",
+  "img_seq_length_boxplot": "data/test_report_001_sequenceLengthBoxplot.png",
+  "img_seq_count_bubbleplot": "data/test_report_001_seqCountBubblePlot.png",
+  "img_seq_count_barplot": "data/test_report_001_seqCountBarPlot.png"
 }

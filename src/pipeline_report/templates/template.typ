@@ -2,6 +2,7 @@
   paper: "a4",
   margin: (x: 1cm, y: 1cm),
 )
+
 #set text(font: "Noto Sans", size: 12pt)
 #set table(
   stroke: (x, y) => if y == 0 {
@@ -25,11 +26,8 @@
 
 ]
 = Pipeline Information
-Git Commit: #data.git_commit_hash
-
-Version: x.y.z
-
-
+/ Git Commit: #raw(data.git_commit_hash)
+/ Version: x.y.z
 
 
 = Overview
@@ -45,19 +43,30 @@ This pipeline run contained *#data.file_count_pre* files. *#data.file_count_post
   ) 
 ]
 
-== Sequence Loss Overview
+= Sequence Loss
 This plot is an #link("https://upset.app/")[UpSet] plot, which indicates the various reasons why sequences were lost from the pipeline. A circle is *filled in* if that test was passed.
-#image(data.img_upset_plot_path)
+#image(data.img_upsetplot)
+#block(breakable: false, [
+== File Size
+The plot below shows sequence counts in files both before and after running through the pipeline. Files that lost more than 60% of their sequences are labelled.
+#image(data.img_seq_count_bubbleplot)
+])
 
+This plot aims to show similar information:
+#image(data.img_seq_count_barplot)
+
+
+#block(breakable: false,
+[
 == Sequence Length
 This plot shows the sequence length distribution for the sequences *that pass filter*.
-#image(data.img_length_boxplot_path)
-
+#image(data.img_seq_length_boxplot)
+])
 #block(breakable: false,
 [
   = Alignment Quality Overview
   
-#image(data.img_msa_grid_path)
+#image(data.img_msa_gridplot)
 ]
 
 )

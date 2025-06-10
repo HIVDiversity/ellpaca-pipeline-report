@@ -12,3 +12,4 @@ wheels/
 temp
 temp.ipynb
 *.pdf
+*.svg

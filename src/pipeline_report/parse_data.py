@@ -7,10 +7,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 import polars as pl
 import utils
-from attrs import asdict
+from attrs import asdict, define
 from loguru import logger
 
-logger.add(sys.stderr, level="WARNING")
+# logger.add(sys.stderr, format="{time} {level} {message}", level="INFO")
+
+
+@define
+class PipelineData:
+    pre_post_df: pl.DataFrame
+    functional_filter_df: pl.DataFrame
+    attrition_df: pl.DataFrame
 
 
 def load_pre_post_files(pre_dir: Path, post_dir: Path):
@@ -125,57 +132,59 @@ def load_functional_filter_reports(base_dir: Path):
 def generate_report_data(
     input_files: Path,
     output_files: Path,
-    report_files: Path,
+    functional_filter_files: Path,
     pre_post_output: Path,
-    report_output: Path,
-) -> None:
+    functional_filter_output: Path,
+    attrition_output: Path,
+) -> PipelineData:
     """Generates the raw files required by the report template.
 
 
     Args:
         input_files (Path): The directory containing the raw sequences fed into the pipeline.
         output_files (Path): The directory containing the final sequences at the end of the pipeline.
-        report_files (Path): The directory containing the functional filter reports.
+        functional_filter_files (Path): The directory containing the functional filter reports.
         pre_post_output (Path): The path to write the pre-post CSV data
-        report_output (Path): The path to write the report output CSV data.
+        functional_filter_output (Path): The path to write the report output CSV data.
+        attrition_output (Path): The path to write the attrition CSV data to.
     """
     logger.info("Reading Data")
-    report_df = load_functional_filter_reports(report_files)
+    functional_filter_df = load_functional_filter_reports(functional_filter_files)
     pre_post_df = load_pre_post_files(pre_dir=input_files, post_dir=output_files)
 
     logger.info("Calculating lost data between pre and post")
-    lost_expr = (((pl.col("pre") - pl.col("post")) / pl.col("pre")) * 100).round(2)
 
-    lost_df: pl.DataFrame = (
+    lost_expr = (((pl.col("pre") - pl.col("post")) / pl.col("pre")) * 100).round(2)
+    kept_expr = ((pl.col("post") / pl.col("pre")) * 100).round(2)
+    attrition_df: pl.DataFrame = (
         pre_post_df.group_by(["pipeline_point", "filename"])
         .len()
-        .pivot(on="pipeline_point", index="filename")
+        .pivot(on=["pipeline_point"], index="filename")
         .fill_null(0)
-        .with_columns(pct_lost=lost_expr, num_lost=pl.col("pre") - pl.col("post"))
-    )
-
-    # New pre_post_df: average before/after: count, length + max, min
-    logger.info("Calculating lost sequence summary stats")
-    summary_stat_df = (
-        pre_post_df.group_by(["pipeline_point", "filename"])
-        .agg(
-            total_seqs=pl.col("name").len(),
-            average_len=pl.col("length").mean(),
-            min_length=pl.col("length").min(),
-            max_len=pl.col("length").max(),
+        .with_columns(
+            pct_lost=lost_expr,
+            num_lost=pl.col("pre") - pl.col("post"),
+            pct_kept=kept_expr,
         )
-        .pivot(on="pipeline_point", index="filename")
     )
 
-    lost_df = lost_df.sort(by="post")
+    attrition_df = attrition_df.sort(by="post")
 
     logger.info(f"Writing pre-post sequence data to {pre_post_output}")
     pre_post_df.write_csv(pre_post_output)
 
-    logger.info(f"Writing pre-post sequence data to {report_output}")
-    report_df.write_csv(report_output)
+    logger.info(f"Writing pre-post sequence data to {functional_filter_output}")
+    functional_filter_df.write_csv(functional_filter_output)
+
+    logger.info(f"Writing attrition data to {attrition_output}")
+    attrition_df.write_csv(attrition_output)
 
     logger.info("Done.")
+    return PipelineData(
+        pre_post_df=pre_post_df,
+        functional_filter_df=functional_filter_df,
+        attrition_df=attrition_df,
+    )
 
 
 def print_msa_grid(
