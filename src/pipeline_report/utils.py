@@ -1,13 +1,10 @@
 import enum
 import os
 from pathlib import Path
-from typing import Literal
 
-import matplotlib.pyplot as plt
 import numpy as np
-from attrs import asdict, define
+from attrs import define
 from Bio import SeqIO
-from loguru import logger
 from typing_extensions import Optional
 
 
