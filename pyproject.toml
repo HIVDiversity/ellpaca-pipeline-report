@@ -1,30 +1,24 @@
 [project]
 name = "pipeline-report"
-version = "0.1.0"
+version = "1.0.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "altair>=5.5.0",
     "attrs>=25.3.0",
     "biopython>=1.85",
-    "great-tables>=0.17.0",
-    "hvplot>=0.11.3",
-    "ipykernel>=6.29.5",
-    "itables>=2.4.0",
-    "jinja2>=3.1.6",
-    "joypy>=0.2.6",
-    "jupyter>=1.1.1",
     "loguru>=0.7.3",
-    "plotly>=6.1.2",
+    "matplotlib>=3.10.3",
     "plotnine>=0.14.5",
     "polars>=1.28.1",
     "pyarrow>=20.0.0",
     "rich>=14.0.0",
-    "ridgeplot>=0.3.2",
-    "seaborn>=0.13.2",
     "tabulate>=0.9.0",
     "typer>=0.15.2",
     "upsetplot>=0.9.0",
-    "vegafusion>=2.0.2",
+]
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
 ]

@@ -1,0 +1,18 @@
+{
+  "run_name": "first_timepoints_v3_001",
+  "run_date": "2025-05-28",
+  "pipeline_version": "1.5.2",
+  "file_count_pre": 109,
+  "file_count_post": 109,
+  "seq_count_pre": 23938,
+  "seq_count_post": 19246,
+  "seq_count_lost": 4692,
+  "pct_seqs_lost": 19.6,
+  "git_commit_hash": "unknown",
+  "nf_param_dump": {},
+  "img_msa_gridplot": "data/first_timepoints_v3_001_msaGridPlot.png",
+  "img_upsetplot": "data/first_timepoints_v3_001_UpSetPlot.png",
+  "img_seq_length_boxplot": "data/first_timepoints_v3_001_sequenceLengthBoxplot.png",
+  "img_seq_count_bubbleplot": "data/first_timepoints_v3_001_seqCountBubblePlot.png",
+  "img_seq_count_barplot": "data/first_timepoints_v3_001_seqCountBarPlot.png"
+}

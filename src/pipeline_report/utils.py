@@ -1,13 +1,10 @@
 import enum
 import os
 from pathlib import Path
-from typing import Literal
 
-import matplotlib.pyplot as plt
 import numpy as np
-from attrs import asdict, define
+from attrs import define
 from Bio import SeqIO
-from loguru import logger
 from typing_extensions import Optional
 
 
@@ -52,11 +49,15 @@ def get_file_info_from_name(
     file_name = file.stem
     participant_id = file_name.split("_")[0]
     visit_id = file_name[7:11]
-    # pool_id = file_name.split("-")[1].split(".").get(0)
+    pool_id = ""
+    # pool_section = file_name.split("-").get(1)
+    # print(pool_section)
+    # if pool_section:
+    #     pool_id = pool_section.split(".").get(0)
 
     return SequencingFile(
-        name=file_name.split(".")[0],
-        pool="",
+        name=file_name[0:6],
+        pool=pool_id,
         visit=visit_id,
         participant=participant_id,
         path=file,

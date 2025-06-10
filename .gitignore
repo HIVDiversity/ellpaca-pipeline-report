@@ -10,3 +10,6 @@ wheels/
 .venv
 
 temp
+temp.ipynb
+*.pdf
+*.svg
