@@ -7,11 +7,8 @@ from pathlib import Path
 from typing import Literal
 
 import create_plots as plotter
-import matplotlib.pyplot as plt
 import parse_data
-import plotnine as pn
 import polars as pl
-from jinja2 import Environment, FileSystemLoader
 from loguru import logger
 
 logger.add(
