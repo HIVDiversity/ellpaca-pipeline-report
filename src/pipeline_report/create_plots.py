@@ -1,17 +1,22 @@
+import os
 import sys
 from pathlib import Path
+from typing import Optional
 
 import matplotlib.pyplot as plt
-import parse_data
+import numpy as np
 import plotnine as pn
 import polars as pl
 import upsetplot
+import utils
 from loguru import logger
 
 # logger.add(sys.stderr, format="{time} {level} {message}", filter="plots", level="INFO")
 
 
-def create_msa_gridplot(data: Path, output: Path) -> None:
+def create_msa_gridplot(
+    data: Path, output: Path, width: Optional[int] = 4, height: Optional[int] = None
+) -> None:
     """Produces a grid of zoomed out MSA grids.
 
     Useful for showing a high-level overview of the MSAs produced.
@@ -19,11 +24,41 @@ def create_msa_gridplot(data: Path, output: Path) -> None:
     Args:
         data (Path): A path to a directory containing the FASTA files to draw
         output (Path): The path to write the output to
+        width (Optional[int]): Number of columns to have in the grid. Defaults to 4
+        height (Optional[int]): Unset. Don't use
     """
     # Create the MSA Grid. Move to new function
 
     logger.info("Producing MSA grid plot")
-    fig, _ = parse_data.print_msa_grid(data)
+
+    files = []
+
+    for file in data.glob("*"):
+        if os.stat(file).st_size > 0:
+            files.append(file)
+
+    if not width:
+        cols = 4
+    else:
+        cols = width
+
+    rows = int(np.ceil(len(files) / cols))
+
+    fig, ax = plt.subplots(ncols=cols, nrows=rows)
+
+    counter = 0
+    for col in range(cols):
+        for row in range(rows):
+            if counter > len(files) - 1:
+                break
+            _, current_msa = utils.msa_to_numpy(files[counter])
+
+            ax[row][col].imshow(current_msa, interpolation="none", cmap="viridis")
+            ax[row][col].set_aspect("auto")
+            ax[row][col].set_axis_off()
+            ax[row][col].set_title(files[counter].stem[:6])
+            counter += 1
+
     fig.set_size_inches(13, 25)
     fig.tight_layout()
 
@@ -61,7 +96,7 @@ def create_filter_upset_plot(data: pl.DataFrame, output: Path) -> None:
     ).plot(fig)
 
     logger.info(f"Writing to {output}")
-    fig.savefig(output)
+    fig.savefig(output, dpi=1200)
 
 
 def create_seq_length_boxplot(data: pl.DataFrame, output: Path) -> None:
@@ -85,7 +120,7 @@ def create_seq_length_boxplot(data: pl.DataFrame, output: Path) -> None:
     )
 
     logger.info(f"Writing to {output}")
-    pn.ggsave(length_boxplot, filename=output, width=8.27, height=11.69)
+    pn.ggsave(length_boxplot, filename=output, width=8.27, height=11.69, dpi=1200)
 
 
 def create_seq_count_bubbleplot(data: pl.DataFrame, output: Path) -> None:
@@ -116,12 +151,7 @@ def create_seq_count_bubbleplot(data: pl.DataFrame, output: Path) -> None:
         )
     )
     logger.info(f"Writing to {output}")
-    pn.ggsave(
-        seq_attrition_bubble_plot,
-        filename=output,
-        width=8,
-        height=6,
-    )
+    pn.ggsave(seq_attrition_bubble_plot, filename=output, width=8, height=6, dpi=1200)
 
 
 def create_seq_count_barplot(data: pl.DataFrame, output: Path) -> None:
@@ -152,9 +182,4 @@ def create_seq_count_barplot(data: pl.DataFrame, output: Path) -> None:
     )
 
     logger.info(f"Writing plot to {output}")
-    pn.ggsave(
-        file_size_plot,
-        filename=output,
-        width=8.27,
-        height=11.69,
-    )
+    pn.ggsave(file_size_plot, filename=output, width=8.27, height=11.69, dpi=1200)
