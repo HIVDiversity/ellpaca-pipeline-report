@@ -52,11 +52,11 @@ def get_file_info_from_name(
     file_name = file.stem
     participant_id = file_name.split("_")[0]
     visit_id = file_name[7:11]
-    # pool_id = file_name.split("-")[1].split(".").get(0)
+    pool_id = file_name.split("-")[1].split(".").get(0)
 
     return SequencingFile(
         name=file_name[0:6],
-        pool="",
+        pool=pool_id,
         visit=visit_id,
         participant=participant_id,
         path=file,
