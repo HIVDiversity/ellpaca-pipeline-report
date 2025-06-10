@@ -1,5 +1,4 @@
 import os
-import sys
 from pathlib import Path
 from typing import Optional
 
@@ -97,6 +96,7 @@ def create_filter_upset_plot(data: pl.DataFrame, output: Path) -> None:
 
     logger.info(f"Writing to {output}")
     fig.savefig(output, dpi=1200)
+    fig.savefig(output.with_suffix(".svg"), dpi=1200)
 
 
 def create_seq_length_boxplot(data: pl.DataFrame, output: Path) -> None:
@@ -121,6 +121,13 @@ def create_seq_length_boxplot(data: pl.DataFrame, output: Path) -> None:
 
     logger.info(f"Writing to {output}")
     pn.ggsave(length_boxplot, filename=output, width=8.27, height=11.69, dpi=1200)
+    pn.ggsave(
+        length_boxplot,
+        filename=output.with_suffix(".svg"),
+        width=8.27,
+        height=11.69,
+        dpi=1200,
+    )
 
 
 def create_seq_count_bubbleplot(data: pl.DataFrame, output: Path) -> None:
@@ -149,9 +156,19 @@ def create_seq_count_bubbleplot(data: pl.DataFrame, output: Path) -> None:
             y="Sequence Count Post-Pipeline",
             fill="Percent Lost",
         )
+        + pn.scale_size(guide=None)
+        + pn.theme_bw()
+        + pn.theme(legend_position="top")
     )
     logger.info(f"Writing to {output}")
     pn.ggsave(seq_attrition_bubble_plot, filename=output, width=8, height=6, dpi=1200)
+    pn.ggsave(
+        seq_attrition_bubble_plot,
+        filename=output.with_suffix(".svg"),
+        width=8,
+        height=6,
+        dpi=1200,
+    )
 
 
 def create_seq_count_barplot(data: pl.DataFrame, output: Path) -> None:
@@ -183,3 +200,10 @@ def create_seq_count_barplot(data: pl.DataFrame, output: Path) -> None:
 
     logger.info(f"Writing plot to {output}")
     pn.ggsave(file_size_plot, filename=output, width=8.27, height=11.69, dpi=1200)
+    pn.ggsave(
+        file_size_plot,
+        filename=output.with_suffix(".svg"),
+        width=8.27,
+        height=11.69,
+        dpi=1200,
+    )

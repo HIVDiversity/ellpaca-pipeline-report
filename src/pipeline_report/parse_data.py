@@ -1,5 +1,4 @@
 import os
-import sys
 from pathlib import Path
 from typing import Optional
 
@@ -56,7 +55,7 @@ def load_pre_post_files(pre_dir: Path, post_dir: Path):
         df_data.extend(
             utils.read_fasta_file(fasta_file, "post", sequencing_file=file_info)
         )
-        logger.debug(f"Read post file {file_info.name} (data: {len(df_data)}")
+        logger.debug(f"Read post file {file_info.name} (length: {len(df_data)})")
 
     logger.info("Converting all the information to a dataframe")
     df = pl.DataFrame([asdict(_) for _ in df_data])

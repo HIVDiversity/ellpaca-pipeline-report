@@ -21,6 +21,7 @@ dependencies = [
     "plotnine>=0.14.5",
     "polars>=1.28.1",
     "pyarrow>=20.0.0",
+    "pycairo>=1.28.0",
     "rich>=14.0.0",
     "ridgeplot>=0.3.2",
     "seaborn>=0.13.2",
