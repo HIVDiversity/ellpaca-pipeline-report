@@ -22,12 +22,12 @@
   #data.run_name - Report
 
   #set text(size:14pt, weight: "medium", fill: gray)
-  nf-codon-align
+  #data.run_date
 
 ]
 = Pipeline Information
 / Git Commit: #raw(data.git_commit_hash)
-/ Version: x.y.z
+/ Version: #data.pipeline_version
 
 
 = Overview

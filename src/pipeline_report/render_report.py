@@ -99,7 +99,7 @@ def create_report_json(
     logger.info("Done with plots.")
     logger.info("Reading pipeline parameters")
 
-    if pipeline_params_fp.exists():
+    if pipeline_params_fp and pipeline_params_fp.exists():
         nextflow_params = json.load(pipeline_params_fp.open("r"))
     else:
         nextflow_params = {}
@@ -107,6 +107,7 @@ def create_report_json(
     output_df = {
         "run_name": run_name,
         "run_date": run_date.strftime("%Y-%m-%d"),
+        "pipeline_version": pipeline_version,
         "file_count_pre": file_count_pre,
         "file_count_post": file_count_post,
         "seq_count_pre": seq_count_pre,
@@ -132,30 +133,9 @@ def create_report_json(
 
 
 def render(
-    pre_dir: Path,
-    post_dir: Path,
-    functional_filter_dir: Path,
     report_output_dir: Path,
     run_name: str,
-    run_date: datetime,
-    pipeline_version: str,
-    pipeline_commit_hash: str,
-    graphic_filetype: Literal["png", "svg"],
-    nextflow_params_fp: Path,
 ):
-    create_report_json(
-        pre_dir,
-        post_dir,
-        functional_filter_dir,
-        report_output_dir,
-        run_name,
-        run_date,
-        pipeline_version,
-        pipeline_commit_hash,
-        graphic_filetype,
-        nextflow_params_fp,
-    )
-
     template_file = resources.files(templates) / "template.typ"
     template_output_path = report_output_dir / f"{run_name}_report.typ"
     logger.info(f"Copying template at {template_file} to {template_output_path}")
@@ -165,30 +145,4 @@ def render(
     compile_command = f"typst compile {template_output_path}"
     logger.info(f"Running {compile_command}")
     subprocess.run(shlex.split(compile_command), shell=False)
-
-
-def test_render():
-    run_name = "test_report_001"
-    run_date = datetime(2025, 6, 10)
-    output_dir = Path(f"/home/dlejeune/masters/pipeline_report/temp/{run_name}")
-
-    pre_dir = "/home/dlejeune/Documents/real_data/ellpaca_nu_merged"
-    post_dir = "/home/dlejeune/results/ellpaca_nu_merged_001/reverse_translate"
-    report_dir = "/home/dlejeune/results/ellpaca_nu_merged_001/functional_filter"
-
-    render(
-        Path(pre_dir),
-        Path(post_dir),
-        Path(report_dir),
-        output_dir,
-        run_name,
-        run_date,
-        "1.0.0",
-        "abcdefg",
-        "png",
-        Path("/doesntexist"),
-    )
-
-
-if __name__ == "__main__":
-    test_render()
+    logger.success(f"Done - wrote output to {template_output_path.with_suffix('.pdf')}")
