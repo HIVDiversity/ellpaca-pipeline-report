@@ -2,9 +2,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import Annotated
 
-import render_report
 import typer
 from loguru import logger
+
+from pipeline_report import render_report
 
 app = typer.Typer()
 
@@ -74,5 +75,9 @@ def render_report_cli(
     pass
 
 
-if __name__ == "__main__":
+def cli_entrypoint():
     app()
+
+
+if __name__ == "__main__":
+    cli_entrypoint()

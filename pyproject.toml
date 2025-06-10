@@ -22,3 +22,6 @@ dependencies = [
 dev = [
     "jupyter>=1.1.1",
 ]
+
+[project.scripts]
+generate-pipeline-report = "pipeline_report:cli.cli_entrypoint"

@@ -5,9 +5,10 @@ from typing import Optional
 import matplotlib.pyplot as plt
 import numpy as np
 import polars as pl
-import utils
 from attrs import asdict, define
 from loguru import logger
+
+from pipeline_report import utils
 
 # logger.add(sys.stderr, format="{time} {level} {message}", level="INFO")
 

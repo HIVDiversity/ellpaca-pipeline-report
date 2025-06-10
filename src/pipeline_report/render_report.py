@@ -7,11 +7,11 @@ from importlib import resources
 from pathlib import Path
 from typing import Literal
 
-import create_plots as plotter
-import parse_data
 import polars as pl
-import templates
 from loguru import logger
+
+from pipeline_report import create_plots as plotter
+from pipeline_report import parse_data, templates
 
 logger.add(
     sys.stderr, format="{time} {level} {message}", filter="prep_data", level="INFO"

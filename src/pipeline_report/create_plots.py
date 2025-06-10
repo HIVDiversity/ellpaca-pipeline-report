@@ -7,8 +7,9 @@ import numpy as np
 import plotnine as pn
 import polars as pl
 import upsetplot
-import utils
 from loguru import logger
+
+from pipeline_report import utils
 
 # logger.add(sys.stderr, format="{time} {level} {message}", filter="plots", level="INFO")
 
