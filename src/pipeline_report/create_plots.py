@@ -51,7 +51,7 @@ def create_msa_gridplot(
         cols = 1
         rows = len(files)
 
-    fig, ax = plt.subplots(ncols=cols, nrows=rows)
+    fig, ax = plt.subplots(ncols=cols, nrows=rows, squeeze=False)
 
     counter = 0
     for col in range(cols):
