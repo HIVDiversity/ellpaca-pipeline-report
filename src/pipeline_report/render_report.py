@@ -144,5 +144,5 @@ def render(
 
     compile_command = f"typst compile {template_output_path}"
     logger.info(f"Running {compile_command}")
-    subprocess.run(shlex.split(compile_command), shell=False)
+    subprocess.run(shlex.split(compile_command), shell=False, check=True)
     logger.success(f"Done - wrote output to {template_output_path.with_suffix('.pdf')}")
