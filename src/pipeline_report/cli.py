@@ -50,7 +50,15 @@ def render_report_cli(
         str, typer.Option(help="Git commit hash that the pipeline was run with")
     ] = None,
     run_date: Annotated[
-        datetime, typer.Option(help="Datetime when the pipeline was run.")
+        datetime,
+        typer.Option(
+            help="Datetime when the pipeline was run.",
+            formats=[
+                "%Y-%m-%d",
+                "%Y-%m-%dT%H:%M:%S",
+                "%Y-%m-%d %H:%M:%S",
+            ],
+        ),
     ] = datetime.today(),
     nextflow_params_fp: Annotated[
         Path, typer.Option(help="Path to the nextflow params as a JSON file.")

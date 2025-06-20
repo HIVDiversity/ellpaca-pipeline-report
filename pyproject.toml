@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "pipeline-report"
 version = "1.0.0"
@@ -25,3 +29,6 @@ dev = [
 
 [project.scripts]
 generate-pipeline-report = "pipeline_report:cli.cli_entrypoint"
+
+[tool.setuptools.package-data]
+"pipeline_report.templates" = ["*.typ"]

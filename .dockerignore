@@ -1,0 +1,14 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.venv
+test_data
+.md
+justfile
+*.ipynb
+.git
+.pytest
+.idea
+.pytest_cache
+.ruff_cache

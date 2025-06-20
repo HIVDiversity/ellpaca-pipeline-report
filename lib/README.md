@@ -1,0 +1,1 @@
+The lib directory normally holds the Typst executable - this isn't included in the github repo.
