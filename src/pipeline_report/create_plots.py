@@ -44,6 +44,13 @@ def create_msa_gridplot(
 
     rows = int(np.ceil(len(files) / cols))
 
+    if len(files) <= 4:
+        logger.info(
+            "Fewer than 4 MSAs, so defaulting to 1 column and each MSA on its own row"
+        )
+        cols = 1
+        rows = len(files)
+
     fig, ax = plt.subplots(ncols=cols, nrows=rows)
 
     counter = 0
