@@ -29,6 +29,7 @@ def create_report_json(
     pipeline_commit_hash: str,
     graphic_filetype: Literal["png", "svg"],
     pipeline_params_fp: Path,
+    ref_name: str,
 ):
     report_output_dir.mkdir(exist_ok=True, parents=True)
     report_data_dir = report_output_dir / "data"
@@ -47,6 +48,7 @@ def create_report_json(
         pre_post_output=pre_post_output,
         functional_filter_output=functional_filter_output,
         attrition_output=attrition_output,
+        ref_name=ref_name,
     )
 
     pre_post_df = pipeline_data.pre_post_df

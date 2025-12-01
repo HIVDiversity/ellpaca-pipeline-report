@@ -20,7 +20,7 @@ class PipelineData:
     attrition_df: pl.DataFrame
 
 
-def load_pre_post_files(pre_dir: Path, post_dir: Path):
+def load_pre_post_files(pre_dir: Path, post_dir: Path, ref_name: str):
     """Parses files from the start and end points of a pipeline run.
 
     Given a set oif files fed into a pipeline run and a set of files that come out of a pipeline
@@ -62,6 +62,9 @@ def load_pre_post_files(pre_dir: Path, post_dir: Path):
     df = pl.DataFrame([asdict(_) for _ in df_data])
     df = df.drop("path")
 
+    if ref_name:
+        df = df.filter(pl.col("name") != ref_name)
+
     return df
 
 
@@ -76,7 +79,7 @@ def load_functional_filter_reports(base_dir: Path):
     """
     reports: list[pl.DataFrame] = []
     logger.info("Loading reports")
-    for report in base_dir.glob("*.functional_report.csv"):
+    for report in base_dir.glob("*.csv"):
         logger.debug(f"Attempting to load report {report}")
         sample_id = report.stem.split(".")[0]
         reports.append(
@@ -136,6 +139,7 @@ def generate_report_data(
     pre_post_output: Path,
     functional_filter_output: Path,
     attrition_output: Path,
+    ref_name: str,
 ) -> PipelineData:
     """Generates the raw files required by the report template.
 
@@ -150,7 +154,9 @@ def generate_report_data(
     """
     logger.info("Reading Data")
     functional_filter_df = load_functional_filter_reports(functional_filter_files)
-    pre_post_df = load_pre_post_files(pre_dir=input_files, post_dir=output_files)
+    pre_post_df = load_pre_post_files(
+        pre_dir=input_files, post_dir=output_files, ref_name=ref_name
+    )
 
     logger.info("Calculating lost data between pre and post")
 

@@ -63,6 +63,9 @@ def render_report_cli(
     nextflow_params_fp: Annotated[
         Path, typer.Option(help="Path to the nextflow params as a JSON file.")
     ] = None,
+    ref_name: Annotated[
+        str, typer.Option(help="Name of the reference added to the samples.")
+    ] = None,
 ):
     logger.info("Creating JSON data.")
     render_report.create_report_json(
@@ -76,6 +79,7 @@ def render_report_cli(
         pipeline_commit_hash,
         "png",
         nextflow_params_fp,
+        ref_name,
     )
 
     logger.info("Rendering report")
