@@ -30,10 +30,11 @@ def create_msa_gridplot(
     # Create the MSA Grid. Move to new function
 
     logger.info("Producing MSA grid plot")
-
     files = []
+    file_list = [_ for _ in data.glob("*.fasta")]
+    file_list.sort()
 
-    for file in data.glob("*"):
+    for file in file_list:
         if os.stat(file).st_size > 0:
             files.append(file)
 
@@ -91,7 +92,16 @@ def create_filter_upset_plot(data: pl.DataFrame, output: Path) -> None:
                 pl.col("passes_no_stop_codon_filter"),
                 pl.col("passes_early_stop_codon_filter"),
             ]
-        ).to_pandas()
+        )
+        .rename(
+            {
+                "passes_frameshift_filter": "Frameshift Filter",
+                "passes_minimum_length_filter": "Minimum Length Filter",
+                "passes_no_stop_codon_filter": "No Stop Codon Filter",
+                "passes_early_stop_codon_filter": "Early Stop Codon Filter",
+            }
+        )
+        .to_pandas()
     )
     fig = plt.figure()
     upsetplot.UpSet(

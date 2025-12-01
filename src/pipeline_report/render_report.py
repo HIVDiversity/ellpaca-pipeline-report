@@ -72,18 +72,12 @@ def create_report_json(
     pct_lost_seqs = (num_lost_seqs / seq_count_pre) * 100
 
     logger.info("Producing plots.")
-    msa_gridplot_fp = report_data_dir / f"{run_name}_msaGridPlot.{graphic_filetype}"
-    upsetplot_fp = report_data_dir / f"{run_name}_UpSetPlot.{graphic_filetype}"
-    seq_length_boxplot_fp = (
-        report_data_dir / f"{run_name}_sequenceLengthBoxplot.{graphic_filetype}"
-    )
-    seq_count_bubbleplot_fp = (
-        report_data_dir / f"{run_name}_seqCountBubblePlot.{graphic_filetype}"
-    )
+    msa_gridplot_fp = report_data_dir / f"{run_name}_msaGridPlot.png"
+    upsetplot_fp = report_data_dir / f"{run_name}_UpSetPlot.svg"
+    seq_length_boxplot_fp = report_data_dir / f"{run_name}_sequenceLengthBoxplot.svg"
+    seq_count_bubbleplot_fp = report_data_dir / f"{run_name}_seqCountBubblePlot.png"
 
-    seq_count_barplot_fp = (
-        report_data_dir / f"{run_name}_seqCountBarPlot.{graphic_filetype}"
-    )
+    seq_count_barplot_fp = report_data_dir / f"{run_name}_seqCountBarPlot.png"
 
     if not msa_gridplot_fp.exists():
         plotter.create_msa_gridplot(post_dir, msa_gridplot_fp)
